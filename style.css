@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+header {
+    background-color: #004a99;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    width: 100vw;         /* Pure screen ki chaudai cover karne ke liye */
+    border-radius: 0;     /* Rounded corners hatane ke liye */
+}
+.navbar {
+    background-color: #1a1a1a;
+    width: 100vw;         /* Pure screen ki chaudai */
+    padding: 15px 0;
+    margin-top: 0;        /* Blue header se bilkul chipkane ke liye */
+    border-radius: 0;     /* Rounded corners hatane ke liye */
+}
+}
+body{
+    font-family: Arial;
+    margin:0;
+    background:#f4f4f4;
+}
+header{
+    background:#003366;
+    color:white;
+    padding:20px;
+    text-align:center;
+}
+.navbar{
+    background:#0d1114;
+    padding:10px;
+    text-align:center;
+}
+.navbar{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+    font-weight:bold;
+}
+.navbar a:hover{
+    color:yellow;
+}
+.container{
+    padding:20px;
+}
+/* 1. Bullet points (dots) hatane ke liye */
+.navbar ul {
+    list-style-type: none; 
+    padding: 0;
+    margin: 0;
+    text-align: center; /* Sab kuch beech mein lane ke liye */
+}
+/* 2. Links ko ek line (row) mein lane ke liye */
+.navbar ul li {
+    display: inline-block; /* Sabse zaroori: Isse links row mein aa jayenge */
+    margin: 0 15px;        /* Links ke beech thoda gap dene ke liye */
+}
+
+/* 3. Links ko saaf dikhane ke liye (Optional par achha hai) */
+.navbar ul li a {
+    color: white;
+    text-decoration: none; /* Underline hatane ke liye */
+    font-family: Arial, sans-serif;
+}
+header {
+    background-color: #004a99;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-bottom: 0; /* Header ke niche ka gap khatam karne ke liye */
+}
+.navbar {
+    background-color: #1a1a1a;
+    width: 100%;       /* Pure screen par failane ke liye */
+    padding: 12px 0;
+    margin-top: 0;    /* Header se chipkane ke liye */
+}
+.navbar ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0 15px;  /* Links ke beech thoda gap */
+header {
+    background-color: #004a99;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    width: 100%;
+    border-radius: 0; /* Agar pehle se radius hai to zero kar dein */
+}
+.navbar {
+    background-color: #1a1a1a;
+    width: 100%;
+    padding: 15px 0;
+    margin-top: 0;   /* Header se bilkul chipka rahega */
+    border-radius: 0; /* Taaki corners square rahein */
+}
+
+.navbar ul {
+    display: flex;             /* Row mein laane ka best tarika */
+    justify-content: center;   /* Center mein rakhne ke liye */
+    list-style: none;
+}
+
+.navbar ul li {
+    margin: 0 20px;            /* Links ke beech barabar gap */
+}
+
+
+}
+footer{
+    background: #1a1a1a;
+    color:white;
+    text-align:center;
+    padding:10px;
+    margin-top:40px;
+}
+
+
+
+.facilities-container {
+    display: flex;            /* Isse images ek line mein aa jayengi */
+    justify-content: center;  /* Isse sab center mein rahengi */
+    gap: 20px;                /* Images ke beech ka gap */
+    padding: 20px;
+}
+
+.facility-card {
+    text-align: left;         /* Text ko left side rakhne ke liye */
+    width: 30%;               /* Har image screen ka 30% area legi */
+}
+
+.facility-card img {
+    width: 100%;              /* Image card ke size ke hisaab se fit ho jayegi */
+    height: auto;
+    border-radius: 4px;       /* Corners ko thoda smooth karne ke liye */
+}
+
+.facility-card h3 {
+    color: #2c3e50;           /* Blueish-grey color jaisa photo mein hai */
+    margin-top: 10px;
+}
+
+
+.welcome-section {
+    background-color: #004a99; /* Aapki photo jaisa dark blue color */
+    color: white;              /* Text white rahega */
+    text-align: center;        /* Isse text beech mein aa jayega */
+    padding: 40px 20px;        /* Upar aur niche thodi jagah (spacing) ke liye */
+    margin: 20px 0;            /* Banner aur niche ki images se thoda gap rakhne ke liye */
+}
+
+.welcome-section h2 {
+    font-size: 32px;           /* Heading ka size bada karne ke liye */
+    margin-bottom: 10px;       /* Heading aur niche wali line ke beech gap */
+}
+
+.welcome-section p {
+    font-size: 18px;           /* Chhota text thoda saaf dikhne ke liye */
+    opacity: 0.9;              /* Text ko thoda soft look dene ke liye */
+}
+header {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+}
+
+nav {
+    background-color: hsl(250, 10%, 89%);
+    padding: 10px 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.banner img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; /* Isse photo khichegi nahi */
+}
+.facilities {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    gap: 20px;
+}
+
+.facility-card {
+    flex: 1;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.facility-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+.hero-container {
+    position: relative;
+}
+
+.hero-text {
+    position: absolute;
+    top: 30%;         /* Text ko thoda upar-niche karne ke liye */
+    left: 10%;        /* Text ko left side mein rakhne ke liye */
+    color: white;     /* Agar background dark hai toh white text sahi rahega */
+}
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px; /* Baki content se gap dene ke liye */
+    width: 100%;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.college-history {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-left: 5px solid #003366; /* Blue border side mein */
+    margin: 20px 0;
+}
+
+.college-history dt {
+    font-weight: bold;
+    color: #003366;
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+.college-history dd {
+    margin-left: 0;
+    margin-bottom: 15px;
+    font-style: italic;
+    color: #555;
+}
+.course-card {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px); /* Mouse le jane par card thoda upar uthega */
+    border-color: #003366;
+}
+
+.course-card h2 {
+    color: #003366;
+    border-bottom: 2px solid #8d1114; /* Red underline for style */
+    display: inline-block;
+    padding-bottom: 5px;
+}
