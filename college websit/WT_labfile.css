@@ -1,0 +1,38 @@
+body {
+            font-family: 'Arial', sans-serif;
+            background-color: #eef2f3;
+            margin: 0;
+            padding: 20px;
+        }
+        .main-card {
+            max-width: 900px;
+            margin: auto;
+            background: white;
+            padding: 40px;
+            border-top: 8px solid #d35400; /* University Theme Color */
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h1 { color: #2c3e50; margin-bottom: 5px; }
+        .dept-title {
+            color: #d35400;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 25px;
+            font-size: 1.4em;
+        }
+        ol {
+            column-count: 2; /* List ko do columns mein dikhane ke liye */
+            column-gap: 40px;
+        }
+        ol li {
+            margin-bottom: 8px;
+            color: #444;
+        }
+        @media (max-width: 600px) {
+            ol { column-count: 1; }
+        }
+   

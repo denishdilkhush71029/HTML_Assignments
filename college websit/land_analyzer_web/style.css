@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #f0f2f5;
+}
+
+.container {
+    text-align: center;
+    margin-top: 100px;
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background: blue;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background: darkblue;
+}
+#map {
+    height: 400px;
+    width: 90%;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+#placesList {
+    height: 250px;
+    overflow-y: scroll;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.place-card {
+    background: #f9f9f9;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 8px;
+    border-left: 5px solid blue;
+}

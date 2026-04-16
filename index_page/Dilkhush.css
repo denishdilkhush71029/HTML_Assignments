@@ -1,0 +1,12 @@
+h1{
+    color: Blue;
+    background-color: black;
+    letter-spacing: normal;
+}
+p{
+    text-align: justify;
+    font-weight: 400;
+    line-height: 1;
+    font-size: normal;
+     font-family: Arial;
+}
