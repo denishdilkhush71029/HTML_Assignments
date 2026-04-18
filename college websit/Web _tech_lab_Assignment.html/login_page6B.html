@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="Design_page.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>Login</h2>
+
+    <form onsubmit="return login()">
+        <input type="email" id="email" placeholder="Enter Email" required>
+        <input type="password" id="password" placeholder="Enter Password" required>
+
+        <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have account? <a href="signup.html">Signup</a></p>
+</div>
+
+<script>
+function login() {
+    let email = document.getElementById("email").value;
+    let pass = document.getElementById("password").value;
+
+    let storedEmail = localStorage.getItem("email");
+    let storedPass = localStorage.getItem("password");
+
+    if(email === storedEmail && pass === storedPass){
+        alert("Login Successful!");
+    } else {
+        alert("Invalid Email or Password");
+    }
+    return false;
+}
+</script>
+
+</body>
+</html>
