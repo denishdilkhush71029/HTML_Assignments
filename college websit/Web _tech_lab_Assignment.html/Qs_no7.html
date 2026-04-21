@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Find Greatest Number</h3>
+<input type="number" id="n1" placeholder="Num 1">
+<input type="number" id="n2" placeholder="Num 2">
+<input type="number" id="n3" placeholder="Num 3">
+<button onclick="check()">Check</button>
+<p id="res1"></p>
+
+<script>
+function check() {
+    let a = parseFloat(document.getElementById('n1').value);
+    let b = parseFloat(document.getElementById('n2').value);
+    let c = parseFloat(document.getElementById('n3').value);
+    let max = (a > b && a > c) ? a : (b > a && b > c) ? b : c;
+    document.getElementById('res1').innerHTML = "Greatest is: " + max;
+}
+</script>
+</body>
+</html>

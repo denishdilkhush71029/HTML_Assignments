@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Factorial Calculator</h3>
+<input type="number" id="factInput" placeholder="Enter number">
+<button onclick="calcFactorial()">Calculate</button>
+<p id="res3"></p>
+
+<script>
+function calcFactorial() {
+    let n = parseInt(document.getElementById('factInput').value);
+    let fact = 1;
+    for(let i = 1; i <= n; i++) {
+        fact *= i;
+    }
+    document.getElementById('res3').innerHTML = "Factorial of " + n + " is " + fact;
+}
+</script>
+</body>
+</html>
