@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Factorial </h2>
+<input type="number" id="num" placeholder="Enter a number">
+<br><br>
+<button onclick="findFactorial()">Calculate</button>
+<p id="result"></p>
+<script>
+function findFactorial() {
+  let num = Number(document.getElementById("num").value);
+  let fact = 1;
+  for (let i = 1; i <= num; i++) {
+    fact *= i;
+  }
+  document.getElementById("result").innerHTML = "Factorial: " + fact;
+}
+</script>
+</body>
+</html>

@@ -6,10 +6,11 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Find Greatest Number</h3>
+    <h3>Find sum Number</h3>
 <input type="number" id="n1" placeholder="Num 1">
 <input type="number" id="n2" placeholder="Num 2">
 <input type="number" id="n3" placeholder="Num 3">
+<input type="number" id="n4" placeholder="num 4">
 <button onclick="check()">Check</button>
 <p id="res1"></p>
 
@@ -18,8 +19,9 @@ function check() {
     let a = parseFloat(document.getElementById('n1').value);
     let b = parseFloat(document.getElementById('n2').value);
     let c = parseFloat(document.getElementById('n3').value);
-    let max = (a > b && a > c) ? a : (b > a && b > c) ? b : c;
-    document.getElementById('res1').innerHTML = "Greatest is: " + max;
+    let d = parseFloat(document.getElementById('n4').value);
+    let sum = a+b+c+d;
+    document.getElementById("res1").innerHTML = "Sum is:" + sum;
 }
 </script>
 </body>
