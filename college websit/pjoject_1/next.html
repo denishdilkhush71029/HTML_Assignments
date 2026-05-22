@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva Project</title>
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&family=League+Spartan:wght@600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #002379;
+            font-family: 'League Spartan', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .first {
+            width: 100vw;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .canva-text {
+            font-family: 'Yellowtail', cursive;
+            font-size: 110px;
+            background: linear-gradient(to right, #00c4cc, #7d2ae8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            color: white;
+            font-size: 26px;
+            margin-bottom: 40px;
+        }
+
+        .container {
+            display: flex;
+            gap: 25px;
+            justify-content: center;
+        }
+
+        .Box {
+            width: 17vw;
+            height: 17vw;
+            border: 6px solid white;
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+
+        .Box:hover {
+            transform: scale(1.1) translateY(-10px) rotate(2deg);
+            z-index: 10;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+        }
+
+        .Box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .f1 { border-color: #00d2ff; }
+        .f2 { border-color: #a1e019; }
+        .f3 { border-color: #ffffff; }
+        .f4 { border-color: #7d2ae8; }
+        .f5 { border-color: #ff4b2b; }
+
+        .secand {
+            width: 100vw;
+            height: 10vh;
+            background-color: #c82333;
+        }
+        .about-section{
+            background: olivedrab;
+            backdrop-filter: blur(10px);
+            width: 80%;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 20px;
+            color: white;
+            text-align: left;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .about-section{
+            font-size: 18px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        .s1{
+            height: 50vw;
+            width: 60vh;
+            background-color: rgb(248, 248, 255, 0.4);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border:whitesmoke solid 3px;
+            border-radius: 100px;
+            color: rgb(255, 255, 255);
+            border: 2px solid rgb(red, green, blue);
+
+
+
+        }
+        .input{
+            display: block;
+            width: 510px;
+            height: 50px;
+            margin-bottom:20px;
+            background-color: rgb(0 0 0 0.5);
+
+            border-start-end-radius: ;
+
+
+        }
+        .button{
+            width: 510px;
+            height: 50px;
+            background: linear-gradient();
+            display: flex;
+            flex-direction: column;
+            float: left;
+            padding-left: 50px;
+            font-size: larger;
+
+        }
+        ::placeholder{
+            font-size: larger;
+            padding-left: 50px;
+            
+
+
+        }
+        .smain{
+            height: 100vh;
+            width: 100vw;
+        }
+        .f9{
+            width: 100vw;
+            height: 60vh;
+            background: linear-gradient(to bottom, white,blue,rgb(27 228 255),);
+            background-color: #c82333;
+            position: absolute;
+            bottom: 0vh;
+            z-index: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="About-section">
+        <h2>About Me</h2>
+        <p> Hi, i'm Dilkhush, a BCA student specializing in AI & ML at Shobhit University.
+            I lOVE buliding creative tech solutions, from full-stack web apps to smart AI system.
+            My goal is to merge technology with creative to bulid future-ready software.
+        </p>
+    </div>
+
+    <div class="first">
+        <h1 class="canva-text">Canva</h1>
+        <p class="subtitle">Edit your ideas here</p>
+
+        <div class="container">
+            <div class="Box f1"><img src="https://images.unsplash.com/photo-1579546929518-9e396f3cc809"></div>
+            <div class="Box f2"><img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab"></div>
+            <div class="Box f3"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853"></div>
+            <div class="Box f4"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb"></div>
+            <div class="Box f5"><img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e"></div>
+        </div>
+    </div>
+    <div class="f6">
+
+    </div>
+
+    <div class="secand">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqUxl_1wQ_Xmvg0tLY9xfDAcp8_nl1BxbckA&s" alt="" class="">
+        <div class="smain">
+            <h3>signing here</h3>
+            <form>
+                <input type="text" placeholder="Enter name">
+                <input type="date" placeholder=" Enter number">
+                <input type="number"  placeholder=" Enter number">
+                <input type="email" placeholder=" Enter email">
+                <input type="submit"  placeholder=" Enter number">
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

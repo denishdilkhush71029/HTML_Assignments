@@ -1,0 +1,79 @@
+/* Basic reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background aur Layout */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Times New Roman', serif;
+    
+    /* Photo jaisi golden vertical stripes */
+    background: linear-gradient(to right, 
+        #000 0%, #000 15%, 
+        #c5a059 25%, #c5a059 30%, 
+        #000 40%, #000 60%, 
+        #c5a059 70%, #c5a059 75%, 
+        #000 85%, #000 100%);
+}
+
+.container {
+    text-align: center;
+    width: 100%;
+}
+
+.brand-title {
+    color: #c5a059;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.gallery-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+/* Image Card settings */
+.item-card {
+    border: 1px solid #444;
+    padding: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* YAHAN CLICK WALA EFFECT HAI */
+/* Jab image par press karke rakhenge toh background golden hoga */
+.item-card:active {
+    background-color: #c5a059;
+    border-color: #fff;
+    transform: scale(0.95); /* Thoda dabne wala effect */
+}
+
+/* Image ki sizing */
+.item-card img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.footer-contact {
+    margin-top: 35px;
+}
+
+.footer-contact a {
+    color: #c5a059;
+    text-decoration: none;
+    font-size: 1.2rem;
+}

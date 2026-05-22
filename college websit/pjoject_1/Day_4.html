@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva Project</title>
+    <style>
+        body {
+            height: 100vh;
+            width: 100vw;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #0b08cd; /* Screenshot wala dark blue */
+            overflow-x: hidden;
+        }
+
+        /* Top Header with Canva Logo */
+        .header {
+            width: 100%;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            background-color: transparent;
+            position: absolute;
+            top: 0;
+        }
+
+        .logo-img {
+            width: 9vb; /* Chota logo corner mein */
+        }
+
+        /* Hero Section */
+        .first {
+            height: 90vh; /* 90% height for blue part */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+
+        .yellwtail{
+            font-size: 100px;
+            font-weight: 'yellowatil',cursive;
+            font-size: 110px;
+            margin-bottom: 5px;
+            background: linear-gradient(to right, #00c4cc, #7d2ae8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            font-size: 28px;
+            margin-top: -10px;
+            margin-bottom: 40px;
+            font-weight: 500;
+        }
+
+        /* Images Gallery (Like your screenshot) */
+        .gallery {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .Box {
+            width: 17vw;
+            height: 17vw;
+            border: 6px solid white; 
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.4s;
+        }
+
+        .Box:hover {
+            transform: scale(1.1)
+            translateY(-10PX) rotate(2deg);
+            z-index: 10;
+        }
+
+        .Box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Border colors exactly like screenshot */
+        .f1 { border-color: #4da9ff; } /* Light Blue */
+        .f2 { border-color: #6da36d; } /* Greenish */
+        .f3 { border-color: #ffffff; } /* White */
+        .f4 { border-color: #d1a673; } /* Beige/Wood */
+        .f5 { border-color: #e62e2e; } /* Red */
+
+        /* Red Page Section (Aapke original code wala) */
+        .secand {
+            width: 100vw;
+            height: 100vh; /* Bottom red strip */
+            background-color: #c82333; /* Dark Red */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <img src="https://camo.githubusercontent.com/59b327309f4017376ee93392fc4d55a45e678e82f56023f506050850a1739309/68747470733a2f2f63646e33642e69636f6e73636f75742e636f6d2f33642f667265652f7468756d622f667265652d63616e76612d393233343635342d373531363837392e706e673f663d77656270" class="logo-img" alt="Canva Logo">
+    </div>
+
+    <div class="first">
+        <h1 class="yellowtail">Canva</h1>
+        
+        <p class="subtitle">Edit your Ideas here</p>
+
+        <div class="gallery">
+            <div class="Box f1"><img src="https://plus.unsplash.com/premium_photo-1682089818097-20263df238cf?fm=jpg&q=60&w=3000&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Img 1"></div>
+            <div class="Box f2"><img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab" alt="Img 2"></div>
+            <div class="Box f3"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKDezgDfcL5NuGvpTkKt5YUydovnlhpAMiVQ&s" alt="Img 3"></div>
+            <div class="Box f4"><img src="https://img.freepik.com/free-photo/3d-geometric-abstract-background_1048-11325.jpg?semt=ais_hybrid&w=740&q=80" alt="Img 4"></div>
+            <div class="Box f5"><img src="https://thumbs.dreamstime.com/b/rainbow-puppy-butterfly-magical-night-scene-rainbow-puppy-butterfly-magical-night-scene-369783212.jpg" alt="Img 5"></div>
+        </div>
+    </div>
+
+    <div class="secand">
+        <h2 style="color: white;">Next Section Starts Here</h2>
+    </div>
+
+</body>
+</html>

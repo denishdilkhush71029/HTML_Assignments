@@ -1,138 +1,120 @@
-// Initialize Map
+// 🔥 Initialize Map
 let map = L.map('map').setView([28.6139, 77.2090], 12);
 
+// 🌍 OpenStreetMap layer
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
 }).addTo(map);
 
-// Marker variable
 let marker;
+let placeMarkers = [];
 
-// Map click event
-map.on('click', function(e) {
+// 📍 Map click event
+map.on('click', function (e) {
+    let lat = e.latlng.lat;
+    let lng = e.latlng.lng;
+
+    // Marker set karo
     if (marker) {
         marker.setLatLng(e.latlng);
     } else {
         marker = L.marker(e.latlng).addTo(map);
     }
+
+    // Nearby places fetch karo
+    getNearbyPlaces(lat, lng);
 });
 
-// 🔥 Function to get real nearby places + show markers
+// 🌐 Fetch nearby places (Overpass API)
 async function getNearbyPlaces(lat, lng) {
-    let url = `https://overpass-api.de/api/interpreter?data=
+
+    let query = `
     [out:json];
     (
-      node["amenity"="hospital"](around:3000,${lat},${lng});
-      node["shop"](around:3000,${lat},${lng});
-      node["amenity"="school"](around:3000,${lat},${lng});
+      node["amenity"="hospital"](around:3000, ${lat}, ${lng});
+      node["amenity"="school"](around:3000, ${lat}, ${lng});
+      node["shop"](around:3000, ${lat}, ${lng});
     );
-    out;`;
+    out;
+    `;
 
-    let response = await fetch(url);
-    let data = await response.json();
+    try {
+        let response = await fetch("https://overpass-api.de/api/interpreter", {
+            method: "POST",
+            body: query
+        });
 
-    // 🧹 Remove old markers
-    if (window.placeMarkers) {
-        window.placeMarkers.forEach(m => map.removeLayer(m));
+        let data = await response.json();
+
+        displayPlaces(data.elements, lat, lng);
+
+    } catch (error) {
+        console.log("Error:", error);
     }
-    window.placeMarkers = [];
-    document.getElementById("placesList").innerHTML = "<b>Nearby Places:</b><br>";
-    
-
-    // 📍 Add new markers with name
-   data.elements.forEach(place => {
-    document.getElementById("placesList").innerHTML += `
-    <div class="place-card" onclick="zoomToPlace(${place.lat}, ${place.lon})">
-        <b>${name}</b><br>
-        Distance: ${distance} km
-    </div>
-`;
-   let name = place.tags?.name || "Unknown Place";
-
-// 📏 Distance calculation
-let distance = map.distance(
-    [lat, lng],
-    [place.lat, place.lon]
-) / 1000;
-
-distance = distance.toFixed(2);
-    let icon;
-
-    if (place.tags?.amenity === "hospital") {
-        icon = L.icon({
-            iconUrl: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
-            iconSize: [25, 25]
-        });
-    } 
-    else if (place.tags?.amenity === "school") {
-        icon = L.icon({
-            iconUrl: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
-            iconSize: [25, 25]
-        });
-    } 
-    else {
-        icon = L.icon({
-            iconUrl: "https://maps.google.com/mapfiles/ms/icons/green-dot.png",
-            iconSize: [25, 25]
-        });
-    }
-
-    let m = L.marker([place.lat, place.lon], { icon: icon })
-        .addTo(map)
-        .bindPopup(`${name}<br>Distance: ${distance} km`);
-
-    window.placeMarkers.push(m);
-});
-    return data.elements.length;
 }
 
-// 🚀 Analyze function
-async function analyze() {
-    if (!marker) {
-        document.getElementById("result").innerText =
-            "Please select location first!";
+// 📋 Show places + markers
+function displayPlaces(places, lat, lng) {
+
+    let container = document.getElementById("nearby");
+    container.innerHTML = "<b>Nearby Places:</b><br>";
+
+    // Old markers remove
+    placeMarkers.forEach(m => map.removeLayer(m));
+    placeMarkers = [];
+
+    if (places.length === 0) {
+        container.innerHTML += "No places found";
         return;
     }
 
-    let lat = marker.getLatLng().lat;
-    let lng = marker.getLatLng().lng;
+    places.forEach(place => {
 
-    document.getElementById("result").innerText = "Analyzing...";
+        let name = place.tags?.name || "Unknown";
+        let type = place.tags?.amenity || place.tags?.shop || "Place";
 
-    try {
-        let count = await getNearbyPlaces(lat, lng);
+        // 📏 Distance calculate
+        let distance = map.distance(
+            [lat, lng],
+            [place.lat, place.lon]
+        ) / 1000;
 
-        let score = 0;
+        distance = distance.toFixed(2);
 
-if (count > 20) score = 9;
-else if (count > 10) score = 7;
-else score = 4;
+        // 📍 Marker icon
+        let icon;
 
-let result = `⭐ Land Score: ${score}/10\n`;
-
-if (score >= 8) {
-    result += "🔥 Excellent Location";
-} else if (score >= 6) {
-    result += "👍 Good Location";
-} else {
-    result += "⚠ Developing Area";
-}
-
-        if (count > 20) {
-            result = "🔥 Excellent Location (High facilities nearby)";
-        } else if (count > 10) {
-            result = "👍 Good Location";
-        } else {
-            result = "⚠ Developing Area";
+        if (type === "hospital") {
+            icon = L.icon({
+                iconUrl: "https://maps.google.com/mapfiles/ms/icons/red-dot.png",
+                iconSize: [25, 25]
+            });
+        } 
+        else if (type === "school") {
+            icon = L.icon({
+                iconUrl: "https://maps.google.com/mapfiles/ms/icons/blue-dot.png",
+                iconSize: [25, 25]
+            });
+        } 
+        else {
+            icon = L.icon({
+                iconUrl: "https://maps.google.com/mapfiles/ms/icons/green-dot.png",
+                iconSize: [25, 25]
+            });
         }
 
-        document.getElementById("result").innerText = result;
+        // 📍 Marker add
+        let m = L.marker([place.lat, place.lon], { icon: icon })
+            .addTo(map)
+            .bindPopup(`<b>${name}</b><br>${type}<br>Distance: ${distance} km`);
 
-    } catch (error) {
-        document.getElementById("result").innerText =
-            "Error fetching data. Check internet!";
-    }
-}
-function zoomToPlace(lat, lng) {
-    map.setView([lat, lng], 16); // zoom level 16
+        placeMarkers.push(m);
+
+        // 📋 List me show
+        container.innerHTML += `
+            <div>
+                <b>${name}</b> (${type}) - ${distance} km
+            </div>
+        `;
+    });
 }

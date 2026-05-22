@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Admissions | Apply Now</title>
+    
+    <!-- Bootstrap 5 CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS for minor adjustments -->
+    <style>
+        .hero-section {
+            background: linear-gradient(rgba(0, 32, 96, 0.8), rgba(0, 32, 96, 0.8)), url('https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            padding: 100px 0;
+        }
+        .form-section {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">Global Excellence University</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="#apply">Apply Now</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 fw-bold mb-4">Shape Your Future With Us</h1>
+            <p class="lead mb-5">Admissions for the Fall 2024 semester are now open. Join a community of innovators, leaders, and thinkers.</p>
+            <a href="#apply" class="btn btn-warning btn-lg fw-bold px-5">Start Application</a>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <div class="container my-5" id="apply">
+        <div class="row justify-content-center">
+            
+            <!-- Information Panel -->
+            <div class="col-lg-5 mb-4 mb-lg-0 pe-lg-5">
+                <h2 class="fw-bold mb-4">Why Choose GEU?</h2>
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item bg-transparent">🎓 Top-ranked academic programs globally</li>
+                    <li class="list-group-item bg-transparent">🌍 Diverse international community</li>
+                    <li class="list-group-item bg-transparent">💼 95% post-graduation employment rate</li>
+                    <li class="list-group-item bg-transparent">🔬 State-of-the-art research facilities</li>
+                </ul>
+                <div class="alert alert-info">
+                    <strong>Note:</strong> Deadline for Early Bird applications is November 30th.
+                </div>
+            </div>
+
+            <!-- Admission Form -->
+            <div class="col-lg-7">
+                <div class="form-section p-4 p-md-5">
+                    <h3 class="text-center fw-bold mb-4">Application Form</h3>
+                    
+                    <!-- Alert box for success message (Hidden by default) -->
+                    <div id="successAlert" class="alert alert-success d-none" role="alert">
+                        Application submitted successfully! Check your email for further instructions.
+                    </div>
+
+                    <form id="admissionForm" novalidate>
+                        
+                        <!-- Personal Details -->
+                        <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label">First Name *</label>
+                                <input type="text" class="form-control" id="firstName" required>
+                                <div class="invalid-feedback">Please enter your first name.</div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label">Last Name *</label>
+                                <input type="text" class="form-control" id="lastName" required>
+                                <div class="invalid-feedback">Please enter your last name.</div>
+                            </div>
+                        </div>
+
+                        <!-- Contact Details -->
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email Address *</label>
+                            <input type="email" class="form-control" id="email" required>
+                            <div class="invalid-feedback">Please provide a valid email address.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Phone Number *</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                            <div class="invalid-feedback">Please provide a contact number.</div>
+                        </div>
+
+                        <!-- Academic Details -->
+                        <div class="mb-3">
+                            <label for="program" class="form-label">Select Program *</label>
+                            <select class="form-select" id="program" required>
+                                <option value="" selected disabled>Choose a degree program...</option>
+                                <option value="cs">B.S. Computer Science</option>
+                                <option value="eng">B.S. Mechanical Engineering</option>
+                                <option value="bus">B.A. Business Administration</option>
+                                <option value="med">Pre-Medicine Track</option>
+                                <option value="arts">B.A. Fine Arts</option>
+                            </select>
+                            <div class="invalid-feedback">Please select a program.</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="gpa" class="form-label">Current GPA (out of 4.0)</label>
+                            <input type="number" class="form-control" id="gpa" step="0.01" min="0" max="4.0">
+                        </div>
+
+                        <!-- Terms -->
+                        <div class="form-check mb-4">
+                            <input class="form-check-input" type="checkbox" id="terms" required>
+                            <label class="form-check-label" for="terms">
+                                I certify that the information provided is accurate and true. *
+                            </label>
+                            <div class="invalid-feedback">You must agree before submitting.</div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary w-100 py-2 fw-bold">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-5" id="contact">
+        <p class="mb-0">&copy; 2024 Global Excellence University. All rights reserved.</p>
+        <small>Admissions Office: admissions@geu.edu | +1 (555) 123-4567</small>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom JavaScript for Form Validation -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById('admissionForm');
+            const successAlert = document.getElementById('successAlert');
+
+            form.addEventListener('submit', function (event) {
+                // Prevent form from refreshing the page
+                event.preventDefault();
+
+                // Check if the form is valid using Bootstrap's built-in check
+                if (!form.checkValidity()) {
+                    event.stopPropagation();
+                    form.classList.add('was-validated');
+                } else {
+                    // Form is valid: Hide validation styles, show success message, and reset
+                    form.classList.remove('was-validated');
+                    successAlert.classList.remove('d-none');
+                    
+                    // Optional: Scroll up to the success message
+                    successAlert.scrollIntoView({ behavior: 'smooth', block: 'end' });
+
+                    // Reset form fields
+                    form.reset();
+
+                    // Hide the success message after 5 seconds
+                    setTimeout(() => {
+                        successAlert.classList.add('d-none');
+                    }, 5000);
+                }
+            }, false);
+        });
+    </script>
+</body>
+</html>
