@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Central Feed - Platform</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="main-layout">
+            
+            <aside class="sidebar" aria-label="Main Navigation Panel">
+                <div class="brand-logo-mark">Denish_Hub</div>
+                <nav class="nav-menu">
+                    <a href="home.html" class="nav-link"><div class="nav-item active" aria-current="page">🏠 Home Feed</div></a>
+                    <a href="explore.html" class="nav-link"><div class="nav-item">🎬 Explore Matrix</div></a>
+                    <a href="messages.html" class="nav-link"><div class="nav-item">💬 Direct Messages</div></a>
+                    <a href="notifications.html" class="nav-link"><div class="nav-item">🔔 Notifications</div></a>
+                    <a href="reels.html" class="nav-link"><div class="nav-item">⚡ Swipe Reels</div></a>
+                    <a href="profile.html" class="nav-link"><div class="nav-item">👤 Node Profile</div></a>
+                    <a href="settings.html" class="nav-link"><div class="nav-item">⚙️ Settings Console</div></a>
+                </nav>
+                <button class="theme-toggle-btn" onclick="toggleSystemTheme()" aria-label="Toggle structural dark and light themes">
+                    🌗 <span id="themeBtnText">Switch Light Mode</span>
+                </button>
+            </aside>
+
+            <main class="feed-section">
+                <div class="stories-wrapper" aria-label="Active Stories Roll">
+                    <div class="story-card">
+                        <div class="story-avatar-ring" style="background: var(--border-color);"><div class="story-pic">＋</div></div>
+                        <span class="story-username">Add Status</span>
+                    </div>
+                    <div class="story-card">
+                        <div class="story-avatar-ring"><div class="story-pic" style="background:#673ab7; color:#fff;">VK</div></div>
+                        <span class="story-username">Vikas_Kumar</span>
+                    </div>
+                </div>
+
+                <section class="create-post" aria-label="Compose New Node Stream">
+                    <textarea id="feedFormPayload" placeholder="Broadcast array updates to the cluster network..." aria-label="Post Context Content Box"></textarea>
+                    <div class="post-actions-row">
+                        <button class="btn" style="background:none; border:1px dashed var(--border-color); color:var(--text-secondary); width:auto;" onclick="alert('Media validation layer active: Max size checked 50MB')">🖼️ Attach Resource</button>
+                        <button class="btn" style="width:auto; padding:10px 24px;" onclick="deployDynamicPostNode()">Publish Stream</button>
+                    </div>
+                </section>
+
+                <div id="runtimeFeedAppender">
+                    <article class="post-card">
+                        <div class="post-header">
+                            <div class="post-user-meta">
+                                <div class="post-avatar" style="background:#673ab7; color:#fff;">VK</div>
+                                <div><h4>Vikas Kumar</h4><span>Verified Dev Node • 2h ago</span></div>
+                            </div>
+                        </div>
+                        <p class="post-content">Just finished implementing relational table schemas for post_likes, comments, and follower nodes. Performance scaling looks perfect!</p>
+                        <div class="post-stats">
+                            <button class="stat-btn" onclick="this.classList.toggle('active')" aria-label="Like post event structure">❤️ <span>48</span> Likes</button>
+                            <button class="stat-btn" aria-label="Comment post event stream">💬 12 Comments</button>
+                        </div>
+                    </article>
+                </div>
+            </main>
+
+            <aside class="right-sidebar" aria-label="Trending Context Widgets">
+                <div style="margin-bottom:24px;">
+                    <div class="widget-heading">Active Pipeline Syncs</div>
+                    <div style="display:flex; align-items:center; gap:12px; padding:6px 0;">
+                        <div style="position:relative;"><div class="post-avatar" style="background:#e91e63; color:#fff;">AK</div><div style="width:10px; height:10px; background:var(--success-color); border-radius:50%; position:absolute; bottom:0; right:0; border:2px solid var(--bg-secondary);"></div></div>
+                        <div><h5 style="font-size:14px;">Anshu Kumari</h5><p style="font-size:11px; color:var(--text-secondary);">Active Cluster</p></div>
+                    </div>
+                </div>
+                <div>
+                    <div class="widget-heading">System Global Trends</div>
+                    <div style="margin-bottom:12px;"><p style="font-size:14px; font-weight:600;">#EdgeAI_Ecosystem</p><span style="font-size:12px; color:var(--text-secondary);">14.2k Nodes</span></div>
+                    <div style="margin-bottom:12px;"><p style="font-size:14px; font-weight:600;">#Relational_Schemas</p><span style="font-size:12px; color:var(--text-secondary);">8.9k Nodes</span></div>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        function deployDynamicPostNode() {
+            const inputField = document.getElementById("feedFormPayload");
+            const dataText = inputField.value.trim();
+            if(!dataText) return;
+            
+            const targetStream = document.getElementById("runtimeFeedAppender");
+            const elementCard = document.createElement("article");
+            elementCard.className = "post-card";
+            elementCard.innerHTML = `
+                <div class="post-header">
+                    <div class="post-user-meta">
+                        <div class="post-avatar" style="background:var(--accent-color); color:#000;">DD</div>
+                        <div><h4>You</h4><span>Just now • Authorized Session</span></div>
+                    </div>
+                </div>
+                <p class="post-content">${dataText}</p>
+                <div class="post-stats">
+                    <button class="stat-btn" onclick="this.classList.toggle('active')">❤️ 0 Likes</button>
+                    <button class="stat-btn">💬 0 Comments</button>
+                </div>
+            `;
+            targetStream.insertBefore(elementCard, targetStream.firstChild);
+            inputField.value = "";
+        }
+    </script>
+</body>
+</html>

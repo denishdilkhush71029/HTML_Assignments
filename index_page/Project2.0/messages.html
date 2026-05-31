@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant Messaging Secure Stream</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="two-column-layout">
+            
+            <aside class="sidebar" aria-label="Navigation">
+                <div class="brand-logo-mark">Denish_Hub</div>
+                <nav class="nav-menu">
+                    <a href="home.html" class="nav-link"><div class="nav-item">🏠 Home Feed</div></a>
+                    <a href="explore.html" class="nav-link"><div class="nav-item">🎬 Explore Matrix</div></a>
+                    <a href="messages.html" class="nav-link"><div class="nav-item active" aria-current="page">💬 Direct Messages</div></a>
+                    <a href="notifications.html" class="nav-link"><div class="nav-item">🔔 Notifications</div></a>
+                </nav>
+                <button class="theme-toggle-btn" onclick="toggleSystemTheme()">🌗 <span id="themeBtnText">Switch Light Mode</span></button>
+            </aside>
+
+            <main class="chat-workspace-shell">
+                <div class="inbox-sidebar-pane" aria-label="Open conversation channel logs">
+                    <h4 class="widget-heading">Active Pipeline Streams</h4>
+                    <div class="chat-user-item" style="background:var(--bg-surface); border-radius:8px;">
+                        <div class="chat-avatar" style="background:#673ab7; color:#fff;">VK</div>
+                        <div>
+                            <h5 style="font-size:14px;">Vikas Kumar</h5>
+                            <p style="font-size:11px; color:var(--success-color); font-weight:600;">Typing data payload...</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="active-conversation-pane">
+                    <div class="chat-window-header">
+                        <div><strong>Vikas Kumar</strong> <span style="font-size:11px; color:var(--success-color); margin-left:8px;">● Secure Node Connection</span></div>
+                    </div>
+                    <div class="chat-msg-stream" id="messageOutputContainer" aria-label="Session thread logs">
+                        <div class="chat-bubble incoming">Hey Dilkhush, did you deploy the Helmet.js headers and rate-limiting modules to the server pipeline file?</div>
+                        <div class="chat-bubble outgoing">Yes Vikas, server-side requests are capped at 100 per minute to isolate threats completely. Security profile is hardened.</div>
+                    </div>
+                    <div class="chat-input-row-bar">
+                        <input type="text" id="chatInputField" class="search-input-field" placeholder="Transmit crypt statement to receiver node..." aria-label="Type secure system message text">
+                        <button class="btn" style="width:auto; padding:0 24px;" onclick="dispatchChatMessage()">Transmit</button>
+                    </div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        function dispatchChatMessage() {
+            const entryField = document.getElementById("chatInputField");
+            const content = entryField.value.trim();
+            if(!content) return;
+            
+            const logsContainer = document.getElementById("messageOutputContainer");
+            const bubbleNode = document.createElement("div");
+            bubbleNode.className = "chat-bubble outgoing";
+            bubbleNode.innerText = content;
+            
+            logsContainer.appendChild(bubbleNode);
+            entryField.value = "";
+            logsContainer.scrollTop = logsContainer.scrollHeight;
+        }
+    </script>
+</body>
+</html>

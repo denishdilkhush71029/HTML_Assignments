@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reels Stream Matrix Controller</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="two-column-layout">
+            
+            <aside class="sidebar" aria-label="Navigation Panel">
+                <div class="brand-logo-mark">Denish_Hub</div>
+                <nav class="nav-menu">
+                    <a href="home.html" class="nav-link"><div class="nav-item">🏠 Home Feed</div></a>
+                    <a href="explore.html" class="nav-link"><div class="nav-item">🎬 Explore Matrix</div></a>
+                    <a href="messages.html" class="nav-link"><div class="nav-item">💬 Direct Messages</div></a>
+                    <a href="reels.html" class="nav-link"><div class="nav-item active" aria-current="page">⚡ Swipe Reels</div></a>
+                </nav>
+                <button class="theme-toggle-btn" onclick="toggleSystemTheme()">🌗 <span id="themeBtnText">Switch Light Mode</span></button>
+            </aside>
+
+            <main class="reels-container-wrapper">
+                <div class="reels-scroll-container" aria-label="Vertical content scrolling container matrix">
+                    
+                    <section class="reel-window-node">
+                        <div class="reel-video-fallback">
+                            <div style="font-size:48px; margin-bottom:12px;">🎬</div>
+                            <h3>AI Crop Health Inference Tracking Engine</h3>
+                            <p style="color:var(--text-secondary); font-size:13px; max-width:300px; margin-top:8px;">Running local segmentation tasks via edge tensor blocks. Latency optimized.</p>
+                        </div>
+                        <div class="reel-actions-panel">
+                            <button class="reel-action-trigger" onclick="this.style.color='var(--error-color)'" aria-label="Like content node">❤️<span style="font-size:10px;">4.2k</span></button>
+                            <button class="reel-action-trigger" onclick="alert('Comment dataset bucket linked')" aria-label="Open replies">💬<span style="font-size:10px;">190</span></button>
+                        </div>
+                        <div class="reel-overlay-controls">
+                            <div><h4>@dilkhush_developer</h4><p style="font-size:13px; color:#e4e6eb; margin-top:4px;">Deploying sustainable AI model arrays on-device! 🌾🚀</p></div>
+                        </div>
+                    </section>
+
+                    <section class="reel-window-node">
+                        <div class="reel-video-fallback">
+                            <div style="font-size:48px; margin-bottom:12px;">🚀</div>
+                            <h3>Relational Follower Link Tables</h3>
+                            <p style="color:var(--text-secondary); font-size:13px; max-width:300px; margin-top:8px;">Evaluating cascading deletes index on target composite row keys.</p>
+                        </div>
+                        <div class="reel-actions-panel">
+                            <button class="reel-action-trigger" onclick="this.style.color='var(--error-color)'">❤️<span style="font-size:10px;">1.8k</span></button>
+                            <button class="reel-action-trigger">💬<span style="font-size:10px;">42</span></button>
+                        </div>
+                        <div class="reel-overlay-controls">
+                            <div><h4>@system_architect</h4><p style="font-size:13px; color:#e4e6eb; margin-top:4px;">Reviewing structural constraint definitions. Keep scaling up!</p></div>
+                        </div>
+                    </section>
+
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

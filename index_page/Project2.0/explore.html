@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discovery Channel Hub - Explore</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <div class="two-column-layout">
+            
+            <aside class="sidebar" aria-label="Navigation">
+                <div class="brand-logo-mark">Denish_Hub</div>
+                <nav class="nav-menu">
+                    <a href="home.html" class="nav-link"><div class="nav-item">🏠 Home Feed</div></a>
+                    <a href="explore.html" class="nav-link"><div class="nav-item active" aria-current="page">🎬 Explore Matrix</div></a>
+                    <a href="messages.html" class="nav-link"><div class="nav-item">💬 Direct Messages</div></a>
+                    <a href="notifications.html" class="nav-link"><div class="nav-item">🔔 Notifications</div></a>
+                    <a href="reels.html" class="nav-link"><div class="nav-item">⚡ Swipe Reels</div></a>
+                </nav>
+                <button class="theme-toggle-btn" onclick="toggleSystemTheme()">🌗 <span id="themeBtnText">Switch Light Mode</span></button>
+            </aside>
+
+            <main class="feed-section">
+                <div class="search-wrapper-bar" role="search">
+                    <input type="search" class="search-input-field" placeholder="Query hashtag records, secure network keys, users..." aria-label="Search global index arrays">
+                    <button class="btn" style="width:auto; padding:0 24px;">Execute Query</button>
+                </div>
+
+                <h3 class="widget-heading" style="margin-bottom:16px;">AI Recommended Matrix Clusters</h3>
+                <div class="explore-masonry-grid" aria-label="Visual data discovery system layout">
+                    <div class="explore-item" style="grid-row: span 2;" onclick="window.location.href='reels.html'">
+                        <div class="reel-badge">⚡ Streaming Reel</div>
+                        <img src="https://images.unsplash.com/photo-1504639725590-34d0984388bd?auto=format&fit=crop&w=400&q=80" alt="Hardware compilation monitoring layout asset">
+                    </div>
+                    <div class="explore-item"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=400&q=80" alt="Code stream logic interface asset"></div>
+                    <div class="explore-item"><img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=400&q=80" alt="Cybersecurity telemetry dashboard layer asset"></div>
+                </div>
+            </main>
+
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
