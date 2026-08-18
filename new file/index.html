@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipkart Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="header">
+        <a href="#" class="logo-container">
+            <span class="logo-text">Flipkart</span>
+            <span class="logo-sub">Explore <span style="color:#ffe500">Plus</span></span>
+        </a>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Search for products, brands and more">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="nav-actions">
+            <div class="login-dropdown">
+                <button class="login-btn">Login</button>
+                <div class="dropdown-content">
+                    <a href="#">My Profile</a>
+                    <a href="#">Orders</a>
+                    <a href="#">Wishlist</a>
+                </div>
+            </div>
+            <a href="#" class="cart-btn">
+                <i class="fa-solid fa-cart-shopping"></i> Cart
+                <span class="cart-badge" id="cartCount">0</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- Categories -->
+    <div class="categories">
+        <div class="cat-item" onclick="filterCategory('all')"><i class="fa-solid fa-border-all"></i>All</div>
+        <div class="cat-item" onclick="filterCategory('Mobiles')"><i class="fa-solid fa-mobile-screen-button"></i>Mobiles</div>
+        <div class="cat-item" onclick="filterCategory('Fashion')"><i class="fa-solid fa-shirt"></i>Fashion</div>
+        <div class="cat-item" onclick="filterCategory('Electronics')"><i class="fa-solid fa-laptop"></i>Electronics</div>
+        <div class="cat-item" onclick="filterCategory('Appliances')"><i class="fa-solid fa-tv"></i>Appliances</div>
+    </div>
+
+    <!-- Banner Carousel -->
+    <div class="carousel-container">
+        <div class="carousel-slide" id="carouselSlide">
+            <div class="banner b1">Big Billion Days - Up to 80% Off</div>
+            <div class="banner b2">Latest 5G Smartphones Launch</div>
+            <div class="banner b3">Electronics & Laptops Specials</div>
+        </div>
+        <button class="carousel-btn prev" onclick="moveSlide(-1)"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="carousel-btn next" onclick="moveSlide(1)"><i class="fa-solid fa-chevron-right"></i></button>
+    </div>
+
+    <!-- Product Display Section -->
+    <div class="products-section">
+        <div class="section-title">Deals of the Day</div>
+        <div class="product-grid" id="productGrid"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

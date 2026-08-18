@@ -1,40 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="hi">
 <head>
-    <title>Land Analyzer</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced Land Analyzer</title>
 
-    <!-- Leaflet CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflt.dist/leaflte.js"></script>
-    <script src="script.js"></script>
-
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <h1 style="text-align:center;">Land Analyzer</h1>
+    <h1>Advanced Land Analyzer</h1>
 
-    <div id="map" style="height: 500px;"></div>
-    <div>
-        <h3>Nearby places:</h3>
-        <div id="nearby">
+    <div class="search-container">
+        <input type="text" id="addressInput" placeholder="Enter specific address or area...">
+        <select id="radiusSelect">
+            <option value="1000">1 KM</option>
+            <option value="2000">2 km</option>
+            <option value="3000" selected>3 KM</option>
+            <option value="5000">5 KM</option>
+        </select>
+        <button onclick="searchAddress()">Search</button>
     </div>
-    <div id="placesList" style="
-    height: 200px;
-    overflow-y: scroll;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 10px;
-">
-    <b>Nearby Places:</b>
-</div>
 
-    <button onclick="analyze()">Analyze Area</button>
-    <p id="result"></p>
+    <div class="score-dashboard">
+        <div class="score-card">
+            <h3>Livability Score</h3>
+            <div id="livabilityScore">--</div>
+        </div>
+        <div class="score-card">
+            <h3>Area Rating</h3>
+            <div id="areaRating" style="color: #ffc107; font-size: 24px;">⭐⭐⭐⭐⭐</div>
+        </div>
+    </div>
 
-    <!-- Leaflet JS -->
+    <div id="map"></div>
+    
+    <div style="text-align: center; margin-bottom: 20px;">
+        <button onclick="analyze()">Detailed Analysis</button>
+        <p id="result"></p>
+    </div>
+
+    <div id="placesList">
+        <div class="tabs">
+            <button class="tab-btn active" onclick="filterCategory('all')">All</button>
+            <button class="tab-btn" onclick="filterCategory('hospital')">🏥 Hospitals</button>
+            <button class="tab-btn" onclick="filterCategory('school')">🏫 Schools</button>
+            <button class="tab-btn" onclick="filterCategory('shop')">🛍️ Shops</button>
+        </div>
+        <div id="nearby">Click on the map or search an address to start...</div>
+    </div>
+
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-
     <script src="script.js"></script>
 </body>
 </html>
