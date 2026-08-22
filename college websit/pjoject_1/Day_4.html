@@ -4,105 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canva Project</title>
+    <!-- Imported Google Font: Yellowtail -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            height: 100vh;
+            min-height: 100vh;
             width: 100vw;
             margin: 0;
             padding: 0;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #0b08cd; /* Screenshot wala dark blue */
+            background-color: #0b08cd; /* Dark blue background */
             overflow-x: hidden;
         }
 
         /* Top Header with Canva Logo */
         .header {
             width: 100%;
-            padding: 15px 30px;
+            padding: 20px 30px;
             display: flex;
             align-items: center;
-            background-color: transparent;
             position: absolute;
             top: 0;
+            left: 0;
+            z-index: 100;
         }
 
         .logo-img {
-            width: 9vb; /* Chota logo corner mein */
+            width: 80px;
+            height: auto;
         }
 
         /* Hero Section */
         .first {
-            height: 90vh; /* 90% height for blue part */
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
+            padding: 100px 20px 40px;
         }
 
-        .yellwtail{
+        .yellowtail {
+            font-family: 'Yellowtail', cursive;
             font-size: 100px;
-            font-weight: 'yellowatil',cursive;
-            font-size: 110px;
-            margin-bottom: 5px;
+            margin: 0 0 10px 0;
             background: linear-gradient(to right, #00c4cc, #7d2ae8);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            line-height: 1.1;
         }
 
         .subtitle {
             font-size: 28px;
-            margin-top: -10px;
-            margin-bottom: 40px;
+            margin-top: 0;
+            margin-bottom: 50px;
             font-weight: 500;
         }
 
-        /* Images Gallery (Like your screenshot) */
+        /* Images Gallery */
         .gallery {
             display: flex;
             gap: 20px;
             justify-content: center;
             align-items: center;
+            flex-wrap: wrap;
             width: 100%;
+            max-width: 1200px;
         }
 
         .Box {
-            width: 17vw;
-            height: 17vw;
-            border: 6px solid white; 
-            border-radius: 10px;
+            width: 180px;
+            height: 180px;
+            border: 5px solid white; 
+            border-radius: 12px;
             overflow: hidden;
-            transition: transform 0.4s;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .Box:hover {
-            transform: scale(1.1)
-            translateY(-10PX) rotate(2deg);
+            transform: scale(1.08) translateY(-10px) rotate(2deg);
             z-index: 10;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
         }
 
         .Box img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
-        /* Border colors exactly like screenshot */
+        /* Border colors */
         .f1 { border-color: #4da9ff; } /* Light Blue */
-        .f2 { border-color: #6da36d; } /* Greenish */
+        .f2 { border-color: #6da36d; } /* Green */
         .f3 { border-color: #ffffff; } /* White */
-        .f4 { border-color: #d1a673; } /* Beige/Wood */
+        .f4 { border-color: #d1a673; } /* Beige */
         .f5 { border-color: #e62e2e; } /* Red */
 
-        /* Red Page Section (Aapke original code wala) */
+        /* Second Section */
         .secand {
             width: 100vw;
-            height: 100vh; /* Bottom red strip */
+            min-height: 100vh;
             background-color: #c82333; /* Dark Red */
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 40px 20px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .yellowtail {
+                font-size: 60px;
+            }
+
+            .subtitle {
+                font-size: 20px;
+                margin-bottom: 30px;
+            }
+
+            .Box {
+                width: 130px;
+                height: 130px;
+            }
         }
     </style>
 </head>
@@ -114,7 +149,6 @@
 
     <div class="first">
         <h1 class="yellowtail">Canva</h1>
-        
         <p class="subtitle">Edit your Ideas here</p>
 
         <div class="gallery">

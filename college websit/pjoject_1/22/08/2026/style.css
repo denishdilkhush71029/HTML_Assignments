@@ -1,0 +1,168 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #23242a;
+}
+
+/* Box container */
+.box {
+    position: relative;
+    width: 380px;
+    height: 420px;
+    background: #1c1c1c;
+    border-radius: 8px;
+    overflow: hidden; /* Baaki ka rotating hissa chhupane ke liye */
+}
+
+/* 1. Rotating Border Logic - First Layer */
+.box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #45f3ff, #45f3ff);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+}
+
+/* 2. Rotating Border Logic - Second Layer (Opposite Side) */
+.box::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 380px;
+    height: 420px;
+    background: linear-gradient(0deg, transparent, #ff2770, #ff2770);
+    transform-origin: bottom right;
+    animation: animate 6s linear infinite;
+    animation-delay: -3s; /* Isse do alag colors ek sath opposite rotate hote hain */
+}
+
+/* 3. Keyframes animation jo shapes ko ghumata hai */
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Form container jo center me reh kar glowing border ko dikhne deta hai */
+form {
+    position: absolute;
+    inset: 4px; /* Border ki thickness 4px ban jayegi */
+    background: #28292d;
+    padding: 50px 40px;
+    border-radius: 8px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+}
+
+form h2 {
+    color: #45f3ff;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.1em;
+}
+
+.inputBox {
+    position: relative;
+    width: 300px;
+    margin-top: 35px;
+}
+
+.inputBox input {
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    z-index: 10;
+}
+
+.inputBox span {
+    position: absolute;
+    left: 0;
+    padding: 20px 0px 10px;
+    color: #8f8f8f;
+    font-size: 1em;
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: #45f3ff;
+    font-size: 0.75em;
+    transform: translateY(-34px);
+}
+
+.inputBox i {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #fff;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+.inputBox input:valid ~ i,
+.inputBox input:focus ~ i {
+    height: 44px;
+    background: #45f3ff;
+    opacity: 0.1;
+}
+
+.links {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.links a {
+    color: #8f8f8f;
+    text-decoration: none;
+    font-size: 0.85em;
+}
+
+.links a:hover {
+    color: #45f3ff;
+}
+
+input[type="submit"] {
+    border: none;
+    outline: none;
+    padding: 11px 25px;
+    background: #45f3ff;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 4px;
+    font-weight: 600;
+    width: 100%;
+    margin-top: 30px;
+    transition: 0.5s;
+}
+
+input[type="submit"]:hover {
+    background: #fff;
+    color: #222;
+}
