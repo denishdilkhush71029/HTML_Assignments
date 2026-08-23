@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instagram • Login</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #fafafa;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #262626;
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+
+    /* Left Side: Animated Phone Frame */
+    .phone-frame {
+      width: 380px;
+      height: 580px;
+      /* Instagram official frame from static CDN */
+      background: url('https://static.cdninstagram.com/rsrc.php/v3/y4/r/ItTndRnM23U.png') no-repeat;
+      background-size: 468.32px 634.15px;
+      background-position: -46px 0;
+      position: relative;
+      display: none; /* Screen width bada hone par show hoga */
+    }
+
+    @media (min-width: 875px) {
+      .phone-frame {
+        display: block;
+      }
+    }
+
+    .screens-wrapper {
+      position: absolute;
+      top: 27px;
+      right: 56px;
+      width: 250px;
+      height: 538px;
+    }
+
+    .screen-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      /* Official screen screenshots from Instagram CDN */
+      background-size: cover;
+      animation: slideAnimation 12s infinite;
+    }
+
+    /* Update the URLs with working official screenshots */
+    .screen-img:nth-child(1) { 
+      background-image: url('https://www.instagram.com/static/images/homepage/screenshots/screenshot1.png/fd084d2fb260.png');
+      animation-delay: 0s; 
+    }
+    .screen-img:nth-child(2) { 
+      background-image: url('https://www.instagram.com/static/images/homepage/screenshots/screenshot2.png/4d1222ed5149.png');
+      animation-delay: 4s; 
+    }
+    .screen-img:nth-child(3) { 
+      background-image: url('https://www.instagram.com/static/images/homepage/screenshots/screenshot3.png/94edb77043b1.png');
+      animation-delay: 8s; 
+    }
+
+    @keyframes slideAnimation {
+      0% { opacity: 0; }
+      15% { opacity: 1; }
+      33% { opacity: 1; }
+      48% { opacity: 0; }
+      100% { opacity: 0; }
+    }
+
+    /* Right Side: Login Form Box */
+    .login-section {
+      display: flex;
+      flex-direction: column;
+      width: 350px;
+    }
+
+    .box {
+      background-color: #ffffff;
+      border: 1px solid #dbdbdb;
+      border-radius: 1px;
+      padding: 20px 40px;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
+    /* Standard logo width and margin */
+    .logo-img {
+      width: 175px;
+      margin: 22px auto 12px;
+    }
+
+    /* Animated Inputs */
+    .input-box {
+      position: relative;
+      margin-bottom: 6px;
+    }
+
+    .input-box input {
+      width: 100%;
+      height: 38px;
+      padding: 9px 8px 7px 8px;
+      background-color: #fafafa;
+      border: 1px solid #dbdbdb;
+      border-radius: 3px;
+      font-size: 12px;
+      outline: none;
+      color: #262626;
+    }
+
+    .input-box input:focus {
+      border-color: #a8a8a8;
+    }
+
+    .input-box label {
+      position: absolute;
+      left: 8px;
+      top: 11px;
+      color: #8e8e8e;
+      font-size: 12px;
+      pointer-events: none;
+      transition: all 0.1s ease-out;
+    }
+
+    /* Input active state */
+    .input-box input:focus ~ label,
+    .input-box input:not(:placeholder-shown) ~ label {
+      top: 2px;
+      font-size: 10px;
+    }
+
+    .input-box input:focus,
+    .input-box input:not(:placeholder-shown) {
+      padding-top: 14px;
+      padding-bottom: 2px;
+    }
+
+    /* Buttons & Dividers */
+    .btn-login {
+      width: 100%;
+      height: 32px;
+      background-color: #0095f6;
+      border: none;
+      border-radius: 8px;
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background-color 0.2s;
+    }
+
+    .btn-login:hover {
+      background-color: #1877f2;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 18px 0;
+    }
+
+    .line {
+      flex: 1;
+      height: 1px;
+      background-color: #dbdbdb;
+    }
+
+    .divider span {
+      color: #8e8e8e;
+      font-size: 13px;
+      font-weight: 600;
+      margin: 0 18px;
+    }
+
+    .fb-login {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #385185;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+      margin-bottom: 12px;
+    }
+
+    .fb-login svg {
+      margin-right: 8px;
+    }
+
+    .forgot-pass {
+      color: #00376b;
+      font-size: 12px;
+      text-decoration: none;
+    }
+
+    .signup-box p {
+      font-size: 14px;
+    }
+
+    .signup-box a {
+      color: #0095f6;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #8e8e8e;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Left: Phone Mockup with Automatic Image Fade Animation -->
+    <div class="phone-frame">
+      <div class="screens-wrapper">
+        <div class="screen-img"></div>
+        <div class="screen-img"></div>
+        <div class="screen-img"></div>
+      </div>
+    </div>
+
+    <!-- Right: Login Form -->
+    <div class="login-section">
+      <div class="box">
+        <!-- Official Instagram SVG Logo as an Image -->
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Instagram_logo_2016.svg" alt="Instagram" class="logo-img">
+
+        <form action="#">
+          <div class="input-box">
+            <input type="text" id="username" placeholder=" " required>
+            <label for="username">Phone number, username, or email</label>
+          </div>
+
+          <div class="input-box">
+            <input type="password" id="password" placeholder=" " required>
+            <label for="password">Password</label>
+          </div>
+
+          <button type="submit" class="btn-login">Log in</button>
+
+          <div class="divider">
+            <div class="line"></div>
+            <span>OR</span>
+            <div class="line"></div>
+          </div>
+
+          <a href="#" class="fb-login">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="#385185">
+              <path d="M16 8.049C16 3.603 12.418 0 8 0S0 3.603 0 8.049C0 12.066 2.942 15.397 6.75 16v-5.624H4.718V8.049H6.75V6.276c0-2.017 1.194-3.131 3.022-3.131.875 0 1.79.157 1.79.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16C13.058 15.397 16 12.066 16 8.049z"/>
+            </svg>
+            Log in with Facebook
+          </a>
+
+          <a href="#" class="forgot-pass">Forgot password?</a>
+        </form>
+      </div>
+
+      <div class="box signup-box">
+        <p>Don't have an account? <a href="#">Sign up</a></p>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p>© 2026 Instagram from Meta</p>
+  </footer>
+
+</body>
+</html>
