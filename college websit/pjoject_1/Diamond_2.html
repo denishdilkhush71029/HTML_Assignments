@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuxeCarat | Fine Diamond & Jewelry</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-dark: #0f172a;
+            --accent-gold: #d4af37;
+            --accent-gold-hover: #b89628;
+            --light-bg: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--light-bg);
+            color: #333;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: var(--primary-dark) !important;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+        .navbar-brand {
+            font-size: 1.6rem;
+            letter-spacing: 2px;
+            color: var(--accent-gold) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.75)), 
+                        url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            padding: 140px 0;
+        }
+        .text-gold {
+            color: var(--accent-gold);
+        }
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--primary-dark);
+            font-weight: bold;
+            border: none;
+        }
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+            color: white;
+        }
+
+        /* Page Switching Animation */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card Customization */
+        .card-jewelry {
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            background: white;
+        }
+        .card-jewelry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: var(--accent-gold);
+        }
+
+        /* Calculator Card */
+        .calc-card {
+            background: white;
+            border-left: 4px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" onclick="showPage('home')">
+                <i class="fa-regular fa-gem me-2"></i>LUXECARAT
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#diamondNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="diamondNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-home" href="#" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-collections" href="#" onclick="showPage('collections')">Collections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-calculator" href="#" onclick="showPage('calculator')">Price Estimator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-custom-order" href="#" onclick="showPage('custom-order')">Custom Design</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-contact" href="#" onclick="showPage('contact')">Contact Us</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-gold px-3" id="nav-login" href="#" onclick="showPage('login')">
+                            <i class="fa-solid fa-user me-1"></i> VIP Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HOME PAGE -->
+    <section id="home" class="page-section active">
+        <div class="hero-section text-center">
+            <div class="container">
+                <h1 class="display-3 fw-bold mb-3">Crafted For Eternity</h1>
+                <p class="lead mb-4 fs-4">Explore Certified Solitaires, Engagement Rings & Luxury Jewelry</p>
+                <button onclick="showPage('collections')" class="btn btn-gold btn-lg px-4 me-2">Browse Collection</button>
+                <button onclick="showPage('custom-order')" class="btn btn-outline-light btn-lg px-4">Design Your Own</button>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h2 class="text-center fw-bold mb-5">The 4 Cs Standard</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-3">
+                    <div class="card card-jewelry p-4 h-100">
+                        <i class="fa-solid fa-gem text-gold display-4 mb-3"></i>
+                        <h5 class="fw-bold">Cut</h5>
+                        <p class="text-muted">Precision cuts designed to maximize light brilliance and fire.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-jewelry p-4 h-100">
+                        <i class="fa-solid fa-weight-hanging text-gold display-4 mb-3"></i>
+                        <h5 class="fw-bold">Carat</h5>
+                        <p class="text-muted">Accurate carat weight certification for true market value.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-jewelry p-4 h-100">
+                        <i class="fa-solid fa-wand-magic-sparkles text-gold display-4 mb-3"></i>
+                        <h5 class="fw-bold">Clarity</h5>
+                        <p class="text-muted">100% GIA & IGI certified eye-clean natural diamonds.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card card-jewelry p-4 h-100">
+                        <i class="fa-solid fa-droplet text-gold display-4 mb-3"></i>
+                        <h5 class="fw-bold">Color</h5>
+                        <p class="text-muted">Selected D-F colorless grade solitaires of supreme quality.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. COLLECTIONS PAGE -->
+    <section id="collections" class="page-section">
+        <div class="container my-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Signature Collections</h2>
+                <p class="text-muted">Handcrafted diamond jewelry certified by GIA & IGI</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Ring" style="height:250px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Solitaire</span>
+                            <h4 class="card-title fw-bold">Royal Solitaire Ring</h4>
+                            <p class="card-text text-muted">1.5 Carat Round Brilliant Cut Solitaire set in 18K Platinum.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-bold text-dark">$4,500</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Inquire Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Necklace" style="height:250px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Necklace</span>
+                            <h4 class="card-title fw-bold">Eternity Diamond Pendant</h4>
+                            <p class="card-text text-muted">VVS1 Clarity Diamonds encrusted in 18K Yellow Gold Chain.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-bold text-dark">$2,800</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Inquire Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Earrings" style="height:250px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Earrings</span>
+                            <h4 class="card-title fw-bold">Halo Diamond Studs</h4>
+                            <p class="card-text text-muted">Pair of 1.0 Carat Cushion Cut Halo Diamond Ear Studs.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-4 fw-bold text-dark">$3,200</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Inquire Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. LIVE PRICE CALCULATOR -->
+    <section id="calculator" class="page-section">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card calc-card p-4 p-md-5">
+                        <h3 class="fw-bold mb-3"><i class="fa-solid fa-calculator me-2 text-gold"></i>Diamond Price Estimator</h3>
+                        <p class="text-muted mb-4">Select diamond specifications to calculate an approximate price range.</p>
+                        
+                        <div class="mb-3">
+                            <label for="calcCarat" class="form-label font-monospace fw-bold">Carat Weight: <span id="caratVal">1.0</span> Carat</label>
+                            <input type="range" class="form-range" id="calcCarat" min="0.5" max="5" step="0.1" value="1.0" oninput="calculatePrice()">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="calcCut" class="form-label fw-bold">Cut Grade</label>
+                            <select class="form-select" id="calcCut" onchange="calculatePrice()">
+                                <option value="1">Ideal Cut (+20%)</option>
+                                <option value="0.9">Excellent Cut (+10%)</option>
+                                <option value="0.8">Very Good Cut</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="calcClarity" class="form-label fw-bold">Clarity Grade</label>
+                            <select class="form-select" id="calcClarity" onchange="calculatePrice()">
+                                <option value="1.3">FL/IF (Flawless)</option>
+                                <option value="1.15">VVS1 - VVS2 (Very Very Slight)</option>
+                                <option value="1.0">VS1 - VS2 (Very Slight)</option>
+                                <option value="0.85">SI1 (Slight Inclusions)</option>
+                            </select>
+                        </div>
+
+                        <div class="p-3 bg-light rounded text-center border">
+                            <span class="text-muted d-block">Estimated Price Range</span>
+                            <h2 class="fw-bold text-dark mb-0" id="estimatedPrice">$3,000 - $3,500</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CUSTOM DESIGN / ORDER PAGE -->
+    <section id="custom-order" class="page-section">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card card-jewelry p-4 p-md-5">
+                        <h3 class="text-center fw-bold mb-4">Custom Jewelry Booking</h3>
+                        
+                        <div id="orderSuccessAlert" class="alert alert-success d-none" role="alert">
+                            <i class="fa-solid fa-circle-check me-2"></i>Inquiry Submitted! Our Diamond Specialist will contact you within 24 hours.
+                        </div>
+
+                        <form id="orderForm" novalidate>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="custName" class="form-label">Full Name *</label>
+                                    <input type="text" class="form-control" id="custName" required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="custPhone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="custPhone" required>
+                                    <div class="invalid-feedback">Please enter contact number.</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="custEmail" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="custEmail" required>
+                                <div class="invalid-feedback">Please provide valid email.</div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="jewelryType" class="form-label">Jewelry Type *</label>
+                                    <select class="form-select" id="jewelryType" required>
+                                        <option value="" selected disabled>Select Type...</option>
+                                        <option value="ring">Solitaire Ring</option>
+                                        <option value="pendant">Necklace / Pendant</option>
+                                        <option value="earrings">Diamond Earrings</option>
+                                        <option value="bracelet">Bangle / Bracelet</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select jewelry type.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="budget" class="form-label">Budget Range ($)</label>
+                                    <select class="form-select" id="budget">
+                                        <option value="2k">$1,000 - $3,000</option>
+                                        <option value="5k">$3,000 - $7,000</option>
+                                        <option value="10k">$7,000 - $15,000</option>
+                                        <option value="luxury">$15,000+</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="instructions" class="form-label">Custom Specifications / Notes</label>
+                                <textarea class="form-control" id="instructions" rows="3" placeholder="Mention diamond shape (Round, Princess, Emerald), metal type (Gold/Platinum), or special design preferences..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold w-100 py-2 fw-bold">Submit Custom Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. VIP LOGIN PAGE -->
+    <section id="login" class="page-section">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="card card-jewelry p-4">
+                        <h3 class="text-center fw-bold mb-4"><i class="fa-solid fa-gem text-gold me-2"></i>VIP Portal Login</h3>
+                        
+                        <div id="loginAlert" class="alert alert-success d-none">
+                            Login Successful! Accessing VIP Catalogue...
+                        </div>
+
+                        <form id="loginForm" novalidate>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">VIP ID or Email</label>
+                                <input type="text" class="form-control" id="loginEmail" placeholder="client@luxecarat.com" required>
+                                <div class="invalid-feedback">Please enter ID or Email.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required>
+                                <div class="invalid-feedback">Please enter password.</div>
+                            </div>
+                            <button type="submit" class="btn btn-gold w-100 py-2 fw-bold">Access Portal</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTACT PAGE -->
+    <section id="contact" class="page-section">
+        <div class="container my-5">
+            <h2 class="text-center fw-bold mb-4">Visit Our Flagship Store</h2>
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <div class="card card-jewelry p-4 h-100">
+                        <h4 class="fw-bold mb-3">LuxeCarat Boutique</h4>
+                        <p><i class="fa-solid fa-location-dot me-2 text-gold"></i> 740 5th Avenue, New York, NY 10019</p>
+                        <p><i class="fa-solid fa-envelope me-2 text-gold"></i> concierge@luxecarat.com</p>
+                        <p><i class="fa-solid fa-phone me-2 text-gold"></i> +1 (800) 555-LUXE</p>
+                        <hr>
+                        <h5 class="fw-bold">Private Appointment</h5>
+                        <p class="text-muted mb-0">Mon - Sat: 10:00 AM - 7:00 PM (By Appointment)</p>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card card-jewelry p-4 h-100">
+                        <h4 class="fw-bold mb-3">Send Direct Inquiry</h4>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Your Inquiry..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gold px-4">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto" style="border-top: 2px solid var(--accent-gold);">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 LuxeCarat Fine Jewelry Inc. All rights reserved.</p>
+            <small class="text-muted">GIA & IGI Certified Natural Diamonds Specialist</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Logic Script -->
+    <script>
+        // Navigation Logic (SPA switching)
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+
+            const navbarCollapse = document.getElementById('diamondNav');
+            if (navbarCollapse.classList.contains('show')) {
+                new bootstrap.Collapse(navbarCollapse).hide();
+            }
+
+            window.scrollTo(0, 0);
+        }
+
+        // Live Price Estimator Math
+        function calculatePrice() {
+            const carat = parseFloat(document.getElementById('calcCarat').value);
+            const cutMultiplier = parseFloat(document.getElementById('calcCut').value);
+            const clarityMultiplier = parseFloat(document.getElementById('calcClarity').value);
+
+            document.getElementById('caratVal').innerText = carat.toFixed(1);
+
+            // Base pricing model: Carat^1.5 * Base Rate
+            const baseRate = 2500;
+            const estimatedBase = Math.pow(carat, 1.4) * baseRate * cutMultiplier * clarityMultiplier;
+            
+            const minPrice = Math.round(estimatedBase * 0.95);
+            const maxPrice = Math.round(estimatedBase * 1.10);
+
+            document.getElementById('estimatedPrice').innerText = `$${minPrice.toLocaleString()} - $${maxPrice.toLocaleString()}`;
+        }
+
+        // Custom Order Form Validation
+        document.getElementById('orderForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const alertBox = document.getElementById('orderSuccessAlert');
+
+            if (!form.checkValidity()) {
+                e.stopPropagation();
+                form.classList.add('was-validated');
+            } else {
+                form.classList.remove('was-validated');
+                alertBox.classList.remove('d-none');
+                form.reset();
+                setTimeout(() => alertBox.classList.add('d-none'), 5000);
+            }
+        });
+
+        // Login Validation
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const alertBox = document.getElementById('loginAlert');
+
+            if (!form.checkValidity()) {
+                e.stopPropagation();
+                form.classList.add('was-validated');
+            } else {
+                form.classList.remove('was-validated');
+                alertBox.classList.remove('d-none');
+                form.reset();
+                setTimeout(() => alertBox.classList.add('d-none'), 4000);
+            }
+        });
+
+        // Contact Form Handing
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for contacting LuxeCarat. Our concierge will get in touch shortly.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>

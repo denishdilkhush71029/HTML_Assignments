@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Royal Heritage Jewelers | Gold, Diamond & Silver</title>
+    
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-burgundy: #4a0e17;
+            --accent-gold: #d4af37;
+            --accent-gold-hover: #b89628;
+            --light-bg: #fdfbf7;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background-color: var(--light-bg);
+            color: #2c2c2c;
+        }
+
+        /* Navbar Styling */
+        .navbar {
+            background-color: var(--primary-burgundy) !important;
+            border-bottom: 3px solid var(--accent-gold);
+        }
+        .navbar-brand {
+            font-size: 1.6rem;
+            letter-spacing: 1px;
+            color: var(--accent-gold) !important;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(74, 14, 23, 0.8), rgba(74, 14, 23, 0.8)), 
+                        url('https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1920&q=80') center/cover;
+            color: white;
+            padding: 120px 0;
+        }
+        
+        .btn-gold {
+            background-color: var(--accent-gold);
+            color: var(--primary-burgundy);
+            font-weight: bold;
+            border: none;
+        }
+        .btn-gold:hover {
+            background-color: var(--accent-gold-hover);
+            color: white;
+        }
+
+        /* Page Switching Animation */
+        .page-section {
+            display: none;
+            animation: fadeIn 0.4s ease-in-out;
+        }
+        .page-section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Card Customization */
+        .card-jewelry {
+            border: 1px solid #eee;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            background: white;
+            overflow: hidden;
+        }
+        .card-jewelry:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+            border-color: var(--accent-gold);
+        }
+
+        .calc-card {
+            background: white;
+            border-top: 4px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#" onclick="showPage('home')">
+                <i class="fa-solid fa-crown me-2"></i>ROYAL HERITAGE JEWELERS
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#jewelNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="jewelNav">
+                <ul class="navbar-nav ms-auto fw-semibold">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-home" href="#" onclick="showPage('home')">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-collections" href="#" onclick="showPage('collections')">Jewelry Collections</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-calculator" href="#" onclick="showPage('calculator')">Price Estimator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-custom-order" href="#" onclick="showPage('custom-order')">Custom Jewelry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-contact" href="#" onclick="showPage('contact')">Contact</a>
+                    </li>
+                    <li class="nav-item ms-lg-3">
+                        <a class="btn btn-gold px-3" id="nav-login" href="#" onclick="showPage('login')">
+                            <i class="fa-solid fa-user me-1"></i> Customer Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HOME PAGE -->
+    <section id="home" class="page-section active">
+        <div class="hero-section text-center">
+            <div class="container">
+                <h1 class="display-3 fw-bold mb-3">Timeless Luxury & Tradition</h1>
+                <p class="lead mb-4 fs-4">Gold, Diamond, Platinum & Fine Silver Ornaments Tailored For Every Occasion</p>
+                <button onclick="showPage('collections')" class="btn btn-gold btn-lg px-4 me-2">Explore All Jewelry</button>
+                <button onclick="showPage('custom-order')" class="btn btn-outline-light btn-lg px-4">Custom Order</button>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h2 class="text-center fw-bold mb-5">Browse By Material</h2>
+            <div class="row g-4 text-center">
+                <div class="col-md-3" onclick="showPage('collections')" style="cursor:pointer;">
+                    <div class="card card-jewelry p-4 h-100">
+                        <i class="fa-solid fa-coins text-warning display-4 mb-3"></i>
+                        <h5 class="fw-bold">22K & 24K Gold</h5>
+                        <p class="text-muted">Bridal sets, chains, bangles, and BIS Hallmarked gold items.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" onclick="showPage('collections')" style="cursor:pointer;">
+                    <div class="card card-jewelry p-4 h-100">
+                        <i class="fa-regular fa-gem text-info display-4 mb-3"></i>
+                        <h5 class="fw-bold">Solitaire Diamond</h5>
+                        <p class="text-muted">Certified diamond rings, pendants, and eternity bands.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" onclick="showPage('collections')" style="cursor:pointer;">
+                    <div class="card card-jewelry p-4 h-100">
+                        <i class="fa-solid fa-ring text-secondary display-4 mb-3"></i>
+                        <h5 class="fw-bold">Pure Platinum</h5>
+                        <p class="text-muted">Modern platinum couple bands and minimalist everyday wear.</p>
+                    </div>
+                </div>
+                <div class="col-md-3" onclick="showPage('collections')" style="cursor:pointer;">
+                    <div class="card card-jewelry p-4 h-100">
+                        <i class="fa-solid fa-sparkles text-dark display-4 mb-3"></i>
+                        <h5 class="fw-bold">925 Fine Silver</h5>
+                        <p class="text-muted">Handcrafted silver jewelry, coins, and traditional payal/anklets.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. JEWELRY COLLECTIONS PAGE (Filter by Customer Preference) -->
+    <section id="collections" class="page-section">
+        <div class="container my-5">
+            <div class="text-center mb-4">
+                <h2 class="fw-bold">Jewelry Store Collection</h2>
+                <p class="text-muted">Select metal or category to find your perfect match</p>
+            </div>
+
+            <!-- Category Filter Buttons -->
+            <div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
+                <button class="btn btn-outline-dark active" onclick="filterJewelry('all')">All Products</button>
+                <button class="btn btn-outline-dark" onclick="filterJewelry('gold')">Gold Jewelry</button>
+                <button class="btn btn-outline-dark" onclick="filterJewelry('diamond')">Diamond</button>
+                <button class="btn btn-outline-dark" onclick="filterJewelry('silver')">Silver</button>
+                <button class="btn btn-outline-dark" onclick="filterJewelry('platinum')">Platinum</button>
+            </div>
+
+            <div class="row g-4" id="jewelryGrid">
+                <!-- Item 1: Gold Necklace -->
+                <div class="col-md-4 jewelry-item gold">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gold Necklace" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">22K Gold</span>
+                            <h5 class="card-title fw-bold">Royal Temple Gold Necklace</h5>
+                            <p class="card-text text-muted">Traditional handcrafted bridal gold necklace with BIS hallmark.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$2,200</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2: Diamond Ring -->
+                <div class="col-md-4 jewelry-item diamond">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Diamond Ring" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">Diamond</span>
+                            <h5 class="card-title fw-bold">Solitaire Engagement Ring</h5>
+                            <p class="card-text text-muted">1.2 Carat VVS1 Certified Diamond set in 18K White Gold.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$3,500</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3: Platinum Band -->
+                <div class="col-md-4 jewelry-item platinum">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Platinum Band" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Platinum</span>
+                            <h5 class="card-title fw-bold">Classic Platinum Couple Band</h5>
+                            <p class="card-text text-muted">Pure 950 Platinum durable love band with sleek finish.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,100</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 4: Silver Earrings -->
+                <div class="col-md-4 jewelry-item silver">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Silver Earrings" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">925 Silver</span>
+                            <h5 class="card-title fw-bold">Oxidized Silver Jhumka</h5>
+                            <p class="card-text text-muted">Authentic Sterling Silver artisan handcrafted dangling earrings.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$180</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 5: Gold Bangles -->
+                <div class="col-md-4 jewelry-item gold">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://images.unsplash.com/photo-1611591475140-4388cf34ff5d?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gold Bangles" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">22K Gold</span>
+                            <h5 class="card-title fw-bold">Heritage Carved Gold Bangles</h5>
+                            <p class="card-text text-muted">Pair of 22K Solid Gold Bangles with intricate designer work.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,600</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 6: Diamond Pendant -->
+                <div class="col-md-4 jewelry-item diamond">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Diamond Pendant" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">Diamond</span>
+                            <h5 class="card-title fw-bold">Floral Diamond Pendant Set</h5>
+                            <p class="card-text text-muted">Real floral shape diamonds encased in Rose Gold frame.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,950</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. JEWELRY ESTIMATOR / CALCULATOR -->
+    <section id="calculator" class="page-section">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="card calc-card p-4 p-md-5">
+                        <h3 class="fw-bold mb-3"><i class="fa-solid fa-calculator me-2 text-warning"></i>Jewelry Price Estimator</h3>
+                        <p class="text-muted mb-4">Calculate estimated price based on metal weight & making charges.</p>
+                        
+                        <div class="mb-3">
+                            <label for="metalType" class="form-label fw-bold">Select Metal</label>
+                            <select class="form-select" id="metalType" onchange="calculateJewelryPrice()">
+                                <option value="gold22">22K Gold ($65 / gram)</option>
+                                <option value="gold24">24K Pure Gold ($72 / gram)</option>
+                                <option value="silver">925 Silver ($1.2 / gram)</option>
+                                <option value="platinum">Platinum ($45 / gram)</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="weightInput" class="form-label fw-bold">Weight in Grams: <span id="weightVal">10</span> Grams</label>
+                            <input type="range" class="form-range" id="weightInput" min="1" max="100" step="1" value="10" oninput="calculateJewelryPrice()">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="makingCharge" class="form-label fw-bold">Making Charges / Craftsmanship</label>
+                            <select class="form-select" id="makingCharge" onchange="calculateJewelryPrice()">
+                                <option value="0.10">Standard Design (10%)</option>
+                                <option value="0.15">Antique / Handcrafted (15%)</option>
+                                <option value="0.20">Bridal Designer (20%)</option>
+                            </select>
+                        </div>
+
+                        <div class="p-3 bg-light rounded text-center border">
+                            <span class="text-muted d-block">Estimated Total Cost (Incl. Taxes & Making)</span>
+                            <h2 class="fw-bold text-dark mb-0" id="totalJewelryPrice">$715</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. CUSTOM JEWELRY ORDER FORM PAGE -->
+    <section id="custom-order" class="page-section">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="card card-jewelry p-4 p-md-5">
+                        <h3 class="text-center fw-bold mb-4">Custom Jewelry Booking & Inquiry</h3>
+                        
+                        <div id="orderSuccessAlert" class="alert alert-success d-none" role="alert">
+                            <i class="fa-solid fa-circle-check me-2"></i>Inquiry Submitted! Our Jewelry Designer will contact you shortly.
+                        </div>
+
+                        <form id="orderForm" novalidate>
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="custName" class="form-label">Customer Name *</label>
+                                    <input type="text" class="form-control" id="custName" required>
+                                    <div class="invalid-feedback">Please enter your name.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="custPhone" class="form-label">Phone Number *</label>
+                                    <input type="tel" class="form-control" id="custPhone" required>
+                                    <div class="invalid-feedback">Please enter contact number.</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="custEmail" class="form-label">Email Address *</label>
+                                <input type="email" class="form-control" id="custEmail" required>
+                                <div class="invalid-feedback">Please provide valid email.</div>
+                            </div>
+
+                            <div class="row g-3 mb-3">
+                                <div class="col-md-6">
+                                    <label for="metalChoice" class="form-label">Metal Preference *</label>
+                                    <select class="form-select" id="metalChoice" required>
+                                        <option value="" selected disabled>Select Metal Type...</option>
+                                        <option value="gold">Yellow Gold (22K / 18K)</option>
+                                        <option value="rose-gold">Rose Gold</option>
+                                        <option value="diamond">Real Diamond</option>
+                                        <option value="platinum">Platinum</option>
+                                        <option value="silver">Silver</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select metal.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="itemCategory" class="form-label">Category *</label>
+                                    <select class="form-select" id="itemCategory" required>
+                                        <option value="" selected disabled>Select Jewelry Item...</option>
+                                        <option value="necklace">Necklace / Haramb</option>
+                                        <option value="ring">Rings / Bands</option>
+                                        <option value="bangles">Bangles / Kangan</option>
+                                        <option value="earrings">Earrings / Jhumka</option>
+                                        <option value="chain">Gold / Platinum Chain</option>
+                                    </select>
+                                    <div class="invalid-feedback">Please select category.</div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="instructions" class="form-label">Customization Notes / Design Details</label>
+                                <textarea class="form-control" id="instructions" rows="3" placeholder="Describe your design (weight preference, gemstone requirement, engraving, ring size etc.)..."></textarea>
+                            </div>
+
+                            <button type="submit" class="btn btn-gold w-100 py-2 fw-bold">Submit Jewelry Request</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. LOGIN PAGE -->
+    <section id="login" class="page-section">
+        <div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-5">
+                    <div class="card card-jewelry p-4">
+                        <h3 class="text-center fw-bold mb-4"><i class="fa-solid fa-crown text-warning me-2"></i>Customer Login</h3>
+                        
+                        <div id="loginAlert" class="alert alert-success d-none">
+                            Login Successful! Redirecting...
+                        </div>
+
+                        <form id="loginForm" novalidate>
+                            <div class="mb-3">
+                                <label for="loginEmail" class="form-label">Mobile Number or Email</label>
+                                <input type="text" class="form-control" id="loginEmail" placeholder="customer@email.com" required>
+                                <div class="invalid-feedback">Please enter ID.</div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="loginPassword" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required>
+                                <div class="invalid-feedback">Please enter password.</div>
+                            </div>
+                            <button type="submit" class="btn btn-gold w-100 py-2 fw-bold">Login to Account</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. CONTACT PAGE -->
+    <section id="contact" class="page-section">
+        <div class="container my-5">
+            <h2 class="text-center fw-bold mb-4">Visit Our Store</h2>
+            <div class="row g-4">
+                <div class="col-md-5">
+                    <div class="card card-jewelry p-4 h-100">
+                        <h4 class="fw-bold mb-3">Heritage Showroom</h4>
+                        <p><i class="fa-solid fa-location-dot me-2 text-warning"></i> 45 Jewelers Market, Gold Souk Road, NY</p>
+                        <p><i class="fa-solid fa-envelope me-2 text-warning"></i> contact@royalheritagejewelers.com</p>
+                        <p><i class="fa-solid fa-phone me-2 text-warning"></i> +1 (800) 999-GOLD</p>
+                        <hr>
+                        <h5 class="fw-bold">Store Timings</h5>
+                        <p class="text-muted mb-0">Mon - Sat: 10:30 AM - 8:30 PM</p>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="card card-jewelry p-4 h-100">
+                        <h4 class="fw-bold mb-3">Send Inquiry</h4>
+                        <form id="contactForm">
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Message or Requirement..." required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-gold px-4">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-4 mt-auto" style="border-top: 3px solid var(--accent-gold);">
+        <div class="container">
+            <p class="mb-1">&copy; 2026 Royal Heritage Jewelers. All rights reserved.</p>
+            <small class="text-muted">100% BIS Hallmarked Gold & Certified Diamonds & Gemstones Store</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // SPA Page Switcher
+        function showPage(pageId) {
+            const pages = document.querySelectorAll('.page-section');
+            pages.forEach(page => page.classList.remove('active'));
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => link.classList.remove('active'));
+
+            const selectedPage = document.getElementById(pageId);
+            if (selectedPage) {
+                selectedPage.classList.add('active');
+            }
+
+            const activeNav = document.getElementById('nav-' + pageId);
+            if (activeNav) {
+                activeNav.classList.add('active');
+            }
+
+            const navbarCollapse = document.getElementById('jewelNav');
+            if (navbarCollapse.classList.contains('show')) {
+                new bootstrap.Collapse(navbarCollapse).hide();
+            }
+
+            window.scrollTo(0, 0);
+        }
+
+        // Product Filter by Customer Preference
+        function filterJewelry(category) {
+            const items = document.querySelectorAll('.jewelry-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Update active state on filter buttons
+            const buttons = document.querySelectorAll('#collections .btn-outline-dark');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+
+        // Jewelry Price Calculator (Weight + Making Charges)
+        function calculateJewelryPrice() {
+            const metal = document.getElementById('metalType').value;
+            const weight = parseFloat(document.getElementById('weightInput').value);
+            const makingRate = parseFloat(document.getElementById('makingCharge').value);
+
+            document.getElementById('weightVal').innerText = weight;
+
+            let ratePerGram = 65; // default 22k gold
+            if (metal === 'gold24') ratePerGram = 72;
+            else if (metal === 'silver') ratePerGram = 1.2;
+            else if (metal === 'platinum') ratePerGram = 45;
+
+            const basePrice = weight * ratePerGram;
+            const total = Math.round(basePrice + (basePrice * makingRate));
+
+            document.getElementById('totalJewelryPrice').innerText = `$${total.toLocaleString()}`;
+        }
+
+        // Form Validation & Handling
+        document.getElementById('orderForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const alertBox = document.getElementById('orderSuccessAlert');
+
+            if (!form.checkValidity()) {
+                e.stopPropagation();
+                form.classList.add('was-validated');
+            } else {
+                form.classList.remove('was-validated');
+                alertBox.classList.remove('d-none');
+                form.reset();
+                setTimeout(() => alertBox.classList.add('d-none'), 5000);
+            }
+        });
+
+        document.getElementById('loginForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const form = e.target;
+            const alertBox = document.getElementById('loginAlert');
+
+            if (!form.checkValidity()) {
+                e.stopPropagation();
+                form.classList.add('was-validated');
+            } else {
+                form.classList.remove('was-validated');
+                alertBox.classList.remove('d-none');
+                form.reset();
+                setTimeout(() => alertBox.classList.add('d-none'), 4000);
+            }
+        });
+
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('Thank you for reaching out! Our executive will connect with you soon.');
+            e.target.reset();
+        });
+    </script>
+</body>
+</html>
