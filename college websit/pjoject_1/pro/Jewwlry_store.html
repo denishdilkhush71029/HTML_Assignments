@@ -174,7 +174,7 @@
         </div>
     </section>
 
-    <!-- 2. JEWELRY COLLECTIONS PAGE (Filter by Customer Preference) -->
+    <!-- 2. JEWELRY COLLECTIONS PAGE -->
     <section id="collections" class="page-section">
         <div class="container my-5">
             <div class="text-center mb-4">
@@ -184,11 +184,11 @@
 
             <!-- Category Filter Buttons -->
             <div class="d-flex justify-content-center flex-wrap gap-2 mb-5">
-                <button class="btn btn-outline-dark active" onclick="filterJewelry('all')">All Products</button>
-                <button class="btn btn-outline-dark" onclick="filterJewelry('gold')">Gold Jewelry</button>
-                <button class="btn btn-outline-dark" onclick="filterJewelry('diamond')">Diamond</button>
-                <button class="btn btn-outline-dark" onclick="filterJewelry('silver')">Silver</button>
-                <button class="btn btn-outline-dark" onclick="filterJewelry('platinum')">Platinum</button>
+                <button class="btn btn-outline-dark active" onclick="filterJewelry(event, 'all')">All Products</button>
+                <button class="btn btn-outline-dark" onclick="filterJewelry(event, 'gold')">Gold Jewelry</button>
+                <button class="btn btn-outline-dark" onclick="filterJewelry(event, 'diamond')">Diamond</button>
+                <button class="btn btn-outline-dark" onclick="filterJewelry(event, 'silver')">Silver</button>
+                <button class="btn btn-outline-dark" onclick="filterJewelry(event, 'platinum')">Platinum</button>
             </div>
 
             <div class="row g-4" id="jewelryGrid">
@@ -242,6 +242,90 @@
                         </div>
                     </div>
                 </div>
+                 <!-- Item 3: Platinum Band -->
+                <div class="col-md-4 jewelry-item platinum">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-BP8tkv52Z6m1yuNbW9Dvl1JLleQTuCMagOZgT3Ay8Q&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Platinum Band" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Platinum</span>
+                            <h5 class="card-title fw-bold">Classic Platinum Couple Band</h5>
+                            <p class="card-text text-muted">Pure 950 Platinum durable love band with sleek finish.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,100</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3: Platinum Band -->
+                <div class="col-md-4 jewelry-item platinum">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL06X4wNqvSdDmr17Uz_swiinBlczq-qvT3pYwBM6tcQ&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Platinum Band" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Platinum</span>
+                            <h5 class="card-title fw-bold">Classic Platinum Couple Band</h5>
+                            <p class="card-text text-muted">Pure 950 Platinum durable love band with sleek finish.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,100</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Item 3: Platinum Band -->
+                <div class="col-md-4 jewelry-item platinum">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrgjcT0uZxXSqazd1wBlCLNTPrTDn9mUB-e9eXf-qkuQ&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Platinum Band" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Platinum</span>
+                            <h5 class="card-title fw-bold">Classic Platinum Couple Band</h5>
+                            <p class="card-text text-muted">Pure 950 Platinum durable love band with sleek finish.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,100</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 3: Platinum Band -->
+                <div class="col-md-4 jewelry-item platinum">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZyWNfgRT9MtxkhTPajD_HF-ymr_kprk1iBmGUUypWlA&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Platinum Band" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Platinum</span>
+                            <h5 class="card-title fw-bold">Classic Platinum Couple Band</h5>
+                            <p class="card-text text-muted">Pure 950 Platinum durable love band with sleek finish.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,100</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Item 3: Platinum Band -->
+                <div class="col-md-4 jewelry-item platinum">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-BP8tkv52Z6m1yuNbW9Dvl1JLleQTuCMagOZgT3Ay8Q&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Platinum Band" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-secondary mb-2">Platinum</span>
+                            <h5 class="card-title fw-bold">Classic Platinum Couple Band</h5>
+                            <p class="card-text text-muted">Pure 950 Platinum durable love band with sleek finish.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,100</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
 
                 <!-- Item 4: Silver Earrings -->
                 <div class="col-md-4 jewelry-item silver">
@@ -259,11 +343,92 @@
                         </div>
                     </div>
                 </div>
-
+                <!-- Item 4: Silver Earrings -->
+                <div class="col-md-4 jewelry-item silver">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTU4_caPB_dUQPkxdzCkYA8alAy5j1xQUHbf_W7Sb89sw&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Silver Earrings" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">925 Silver</span>
+                            <h5 class="card-title fw-bold">Oxidized Silver Jhumka</h5>
+                            <p class="card-text text-muted">Authentic Sterling Silver artisan handcrafted dangling earrings.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$180</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Item 4: Silver Earrings -->
+                <div class="col-md-4 jewelry-item silver">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyVX60kRe-_LgEOf1MDVCCXcFVAEN6VysbR5D9GEZeWA&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Silver Earrings" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">925 Silver</span>
+                            <h5 class="card-title fw-bold">Oxidized Silver Jhumka</h5>
+                            <p class="card-text text-muted">Authentic Sterling Silver artisan handcrafted dangling earrings.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$180</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Item 4: Silver Earrings -->
+                <div class="col-md-4 jewelry-item silver">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2023/11/364598436/OT/WS/UD/153138923/trendy-earring-500x500.jpg?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Silver Earrings" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">925 Silver</span>
+                            <h5 class="card-title fw-bold">Oxidized Silver Jhumka</h5>
+                            <p class="card-text text-muted">Authentic Sterling Silver artisan handcrafted dangling earrings.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$180</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Item 4: Silver Earrings -->
+                <div class="col-md-4 jewelry-item silver">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1mnAOG1EmS8n_xDMVRLdvmMielhUma3bCclGdnv9XvQ&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Silver Earrings" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">925 Silver</span>
+                            <h5 class="card-title fw-bold">Oxidized Silver Jhumka</h5>
+                            <p class="card-text text-muted">Authentic Sterling Silver artisan handcrafted dangling earrings.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$180</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 4: Silver Earrings -->
+                <div class="col-md-4 jewelry-item silver">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTiWGzIb56c6AprPk3GA3zU468cPjd_izcYSqEuDgobg&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Silver Earrings" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">925 Silver</span>
+                            <h5 class="card-title fw-bold">Oxidized Silver Jhumka</h5>
+                            <p class="card-text text-muted">Authentic Sterling Silver artisan handcrafted dangling earrings.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$180</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
                 <!-- Item 5: Gold Bangles -->
                 <div class="col-md-4 jewelry-item gold">
                     <div class="card card-jewelry h-100">
-                        <img src="https://images.unsplash.com/photo-1611591475140-4388cf34ff5d?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gold Bangles" style="height:240px; object-fit:cover;">
+                        <img src=https://images.meesho.com/images/products/911296863/j0hcj_512.webp?width=512=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gold Bangles" style="height:240px; object-fit:cover;">
                         <div class="card-body">
                             <span class="badge bg-warning text-dark mb-2">22K Gold</span>
                             <h5 class="card-title fw-bold">Heritage Carved Gold Bangles</h5>
@@ -276,6 +441,107 @@
                         </div>
                     </div>
                 </div>
+                <!-- Item 5: Gold Bangles -->
+                <div class="col-md-4 jewelry-item gold">
+                    <div class="card card-jewelry h-100">
+                        <img src=https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRYjEfpge_pnvhr1etEAms6gykZYgcS9bLuAPbksd9Byze3BoxRHhCMfA&s=10width=512=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gold Bangles" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">22K Gold</span>
+                            <h5 class="card-title fw-bold">Heritage Carved Gold Bangles</h5>
+                            <p class="card-text text-muted">Pair of 22K Solid Gold Bangles with intricate designer work.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,600</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Item 5: Gold Bangles -->
+                <div class="col-md-4 jewelry-item gold">
+                    <div class="card card-jewelry h-100">
+                        <img src=https://ik.imagekit.io/nttinzxhx/images/product_image/Rumana.jpg width=512=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gold Bangles" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">22K Gold</span>
+                            <h5 class="card-title fw-bold">Heritage Carved Gold Bangles</h5>
+                            <p class="card-text text-muted">Pair of 22K Solid Gold Bangles with intricate designer work.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,600</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Item 5: Gold Bangles -->
+                <div class="col-md-4 jewelry-item gold">
+                    <div class="card card-jewelry h-100">
+                        <img src=https://ik.imagekit.io/nttinzxhx/images/product_image/Vallam_Kalli_Adhai-Pyanch_Bala-1606913997200919-06-1.jpg width=512=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gold Bangles" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">22K Gold</span>
+                            <h5 class="card-title fw-bold">Heritage Carved Gold Bangles</h5>
+                            <p class="card-text text-muted">Pair of 22K Solid Gold Bangles with intricate designer work.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,600</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Item 5: Gold Bangles -->
+                <div class="col-md-4 jewelry-item gold">
+                    <div class="card card-jewelry h-100">
+                        <img src=https://ik.imagekit.io/nttinzxhx/images/product_image/212681474.jpg width=512=format&fit=crop&w=600&q=80" class="card-img-top" alt="Gold Bangles" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">22K Gold</span>
+                            <h5 class="card-title fw-bold">Heritage Carved Gold Bangles</h5>
+                            <p class="card-text text-muted">Pair of 22K Solid Gold Bangles with intricate designer work.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,600</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Item 6: Diamond Pendant -->
+                <div class="col-md-4 jewelry-item diamond">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwMAlgIxIQtLcbsBM9C4VcipKhxMNPdD2IEv4ANtIzVA&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Diamond Pendant" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">Diamond</span>
+                            <h5 class="card-title fw-bold">Floral Diamond Pendant Set</h5>
+                            <p class="card-text text-muted">Real floral shape diamonds encased in Rose Gold frame.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,950</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Item 6: Diamond Pendant -->
+                <div class="col-md-4 jewelry-item diamond">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxaKgIceUQhdm1traCxjfSYd5qkxTMB-_vn6gQp25Hjw&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Diamond Pendant" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">Diamond</span>
+                            <h5 class="card-title fw-bold">Floral Diamond Pendant Set</h5>
+                            <p class="card-text text-muted">Real floral shape diamonds encased in Rose Gold frame.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,950</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
 
                 <!-- Item 6: Diamond Pendant -->
                 <div class="col-md-4 jewelry-item diamond">
@@ -293,7 +559,42 @@
                         </div>
                     </div>
                 </div>
+                <!-- Item 6: Diamond Pendant -->
+                <div class="col-md-4 jewelry-item diamond">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://d25g9z9s77rn4i.cloudfront.net/uploads/product/1055/1781694153_340a3cfad31859117a09.webp?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Diamond Pendant" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">Diamond</span>
+                            <h5 class="card-title fw-bold">Floral Diamond Pendant Set</h5>
+                            <p class="card-text text-muted">Real floral shape diamonds encased in Rose Gold frame.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,950</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- Item 6: Diamond Pendant -->
+                <div class="col-md-4 jewelry-item diamond">
+                    <div class="card card-jewelry h-100">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHUqMyCZsjPn2Se7yWbbjGx5DpOhby1FkYzaMsEKJgtA&s=10?auto=format&fit=crop&w=600&q=80" class="card-img-top" alt="Diamond Pendant" style="height:240px; object-fit:cover;">
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">Diamond</span>
+                            <h5 class="card-title fw-bold">Floral Diamond Pendant Set</h5>
+                            <p class="card-text text-muted">Real floral shape diamonds encased in Rose Gold frame.</p>
+                            <hr>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$1,950</span>
+                                <button onclick="showPage('custom-order')" class="btn btn-gold btn-sm">Buy / Inquire</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
+             </div>
         </div>
     </section>
 
@@ -512,15 +813,16 @@
             }
 
             const navbarCollapse = document.getElementById('jewelNav');
-            if (navbarCollapse.classList.contains('show')) {
-                new bootstrap.Collapse(navbarCollapse).hide();
+            if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
             }
 
             window.scrollTo(0, 0);
         }
 
         // Product Filter by Customer Preference
-        function filterJewelry(category) {
+        function filterJewelry(evt, category) {
             const items = document.querySelectorAll('.jewelry-item');
             items.forEach(item => {
                 if (category === 'all' || item.classList.contains(category)) {
@@ -533,7 +835,9 @@
             // Update active state on filter buttons
             const buttons = document.querySelectorAll('#collections .btn-outline-dark');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (evt && evt.target) {
+                evt.target.classList.add('active');
+            }
         }
 
         // Jewelry Price Calculator (Weight + Making Charges)
@@ -583,14 +887,17 @@
             } else {
                 form.classList.remove('was-validated');
                 alertBox.classList.remove('d-none');
-                form.reset();
-                setTimeout(() => alertBox.classList.add('d-none'), 4000);
+                setTimeout(() => {
+                    alertBox.classList.add('d-none');
+                    showPage('home');
+                    form.reset();
+                }, 2000);
             }
         });
 
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
-            alert('Thank you for reaching out! Our executive will connect with you soon.');
+            alert('Thank you for contacting Royal Heritage Jewelers! We will get back to you shortly.');
             e.target.reset();
         });
     </script>
