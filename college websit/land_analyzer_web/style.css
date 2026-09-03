@@ -1,13 +1,22 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f0f2f5;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background: linear-gradient(135deg, #f0f2f5 0%, #e5e7eb 100%);
     padding: 20px;
+    color: #333;
+    line-height: 1.6;
 }
 
 h1 {
     text-align: center;
-    color: #333;
+    color: #1a202c;
+    margin: 0 0 30px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 /* 🔍 Search Container Styles */
@@ -17,40 +26,75 @@ h1 {
     display: flex;
     gap: 10px;
     padding: 0 20px;
+    flex-wrap: wrap;
 }
 
 #addressInput {
     flex: 2;
-    padding: 12px;
+    min-width: 200px;
+    padding: 12px 15px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
     outline: none;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#addressInput:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 #radiusSelect {
     flex: 0.5;
-    padding: 12px;
+    min-width: 100px;
+    padding: 12px 15px;
     font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
     background: white;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+#radiusSelect:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
 }
 
 button {
     padding: 12px 25px;
     font-size: 16px;
-    background: #007bff;
+    font-weight: 600;
+    background: #3b82f6;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
-    transition: background 0.3s;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
-button:hover {
-    background: #0056b3;
+button:hover:not(:disabled) {
+    background: #2563eb;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+}
+
+button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+button:focus {
+    outline: 2px solid #1e40af;
+    outline-offset: 2px;
+}
+
+button:disabled {
+    background: #cbd5e1;
+    cursor: not-allowed;
+    opacity: 0.6;
 }
 
 /* 📊 Score Dashboard Styles */
@@ -64,15 +108,28 @@ button:hover {
 
 .score-card {
     background: white;
-    padding: 15px 30px;
-    border-radius: 10px;
+    padding: 20px 30px;
+    border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    min-width: 150px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+    min-width: 180px;
+    border: 1px solid #e5e7eb;
 }
 
-.score-card h3 { margin: 0 0 10px 0; font-size: 14px; color: #666; text-transform: uppercase; }
-#livabilityScore { font-size: 32px; font-weight: bold; color: #28a745; }
+.score-card h3 {
+    margin: 0 0 15px 0;
+    font-size: 13px;
+    color: #6b7280;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+#livabilityScore {
+    font-size: 36px;
+    font-weight: bold;
+    color: #10b981;
+}
 
 /* 🗺️ Map Styles */
 #map {
@@ -90,42 +147,159 @@ button:hover {
     margin: 20px auto;
     height: 350px;
     overflow-y: auto;
-    border-radius: 10px;
+    border-radius: 12px;
     padding: 15px;
     background: #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e5e7eb;
 }
 
 .tabs {
     display: flex;
     gap: 10px;
     margin-bottom: 15px;
-    border-bottom: 2px solid #eee;
+    border-bottom: 2px solid #e5e7eb;
     padding-bottom: 10px;
+    overflow-x: auto;
 }
 
 .tab-btn {
-    background: #e4e6eb;
-    color: #333;
+    background: #f3f4f6;
+    color: #374151;
     padding: 8px 16px;
     font-size: 14px;
     border-radius: 20px;
+    border: 1px solid #d1d5db;
+    white-space: nowrap;
+    transition: all 0.3s;
+}
+
+.tab-btn:hover {
+    background: #e5e7eb;
+    border-color: #9ca3af;
 }
 
 .tab-btn.active {
-    background: #007bff;
+    background: #3b82f6;
     color: white;
+    border-color: #3b82f6;
+    box-shadow: 0 2px 8px rgba(59, 130, 246, 0.3);
 }
 
 .place-card {
-    background: #f9f9f9;
-    padding: 12px;
+    background: #f9fafb;
+    padding: 12px 15px;
     margin-bottom: 10px;
     border-radius: 8px;
-    border-left: 5px solid #007bff;
+    border-left: 4px solid #3b82f6;
+    transition: all 0.3s;
+    border: 1px solid #e5e7eb;
+}
+
+.place-card:hover {
+    background: #ffffff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.place-card strong {
+    color: #1a202c;
+}
+
+.place-card small {
+    color: #6b7280;
+}
+
+/* Analysis Container */
+.analysis-container {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#result {
+    margin-top: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    min-height: 20px;
 }
 
 /* Custom Markers styling */
-.hospital-marker { background-color: #dc3545; border-radius: 50%; border: 2px solid white; }
-.school-marker { background-color: #007bff; border-radius: 50%; border: 2px solid white; }
-.shop-marker { background-color: #28a745; border-radius: 50%; border: 2px solid white; }
+.hospital-marker {
+    background-color: #ef4444;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.4);
+}
+
+.school-marker {
+    background-color: #3b82f6;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(59, 130, 246, 0.4);
+}
+
+.shop-marker {
+    background-color: #10b981;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.4);
+}
+
+/* Scrollbar Styling */
+#placesList::-webkit-scrollbar {
+    width: 8px;
+}
+
+#placesList::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 10px;
+}
+
+#placesList::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 10px;
+}
+
+#placesList::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+    .search-container {
+        flex-direction: column;
+        padding: 0 10px;
+    }
+
+    #addressInput,
+    #radiusSelect,
+    button {
+        width: 100%;
+    }
+
+    #map {
+        height: 300px;
+    }
+
+    .score-dashboard {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .score-card {
+        min-width: unset;
+    }
+
+    .tabs {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .tab-btn {
+        flex-shrink: 0;
+    }
+}
